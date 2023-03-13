@@ -1,3 +1,6 @@
+Recommended Book to Read where this project was compiled from.
+Pro ASP.NET Core Identity By Adam Freeman
+
 # Portal
  .Net Core Identity
 dotnet --list-sdks
