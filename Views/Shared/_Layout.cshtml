@@ -1,16 +1,76 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Identity App</title>
-    <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" media="all" type="image/x-icon" href="~/Content/Images/favicon.ico">
+    <link rel="icon" media="all" type="image/x-icon" href="~/Content/Images/favicon.ico"><!-- ico not png -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@ViewData["Title"] - Portal</title>
+    <bundle name="wwwroot/bundles/site.min.css" />
+    <bundle name="wwwroot/bundles/site.min.js" />
+    <link rel="stylesheet" href="~/css/bootstrap-3.4.1.min.css">
+    <script src="~/scripts/bootstrap-3.4.1.min.js"></script>
+    <script src="~/scripts/bootstrap-5.0.0-bundle.min.js"></script>
+
+
+    <partial name="_Header" />
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-secondary">
-        <a class="navbar-brand text-white">Portal</a>
-        <div class="text-white"><partial name="_LoginPartial" /></div>
-    </nav>
-    <partial name="_NavigationPartial" />
-    @RenderBody()
+    <div class="wrapper">
+        <section class="content">
+            @RenderBody()
+        </section>
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="py-12 my-12 border-top">
+                <p class="text-center">&copy; @DateTime.Now.Year Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter" /></svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram" /></svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook" /></svg></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

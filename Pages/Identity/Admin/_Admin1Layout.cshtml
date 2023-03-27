@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" media="all" type="image/x-icon" href="~/Content/Images/favicon.ico">
+    <link rel="icon" media="all" type="image/x-icon" href="~/Content/Images/favicon.ico"><!-- ico not png -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@ViewData["Title"] - Portal</title>
+    <bundle name="wwwroot/bundles/site.min.css" />
+    <bundle name="wwwroot/bundles/site.min.js" />
+
+</head>
+<body class="hold-transition skin-default sidebar-mini">
+    <script type="text/javascript">
+        /* Recover sidebar state */
+        (function () {
+            if (Boolean(localStorage.getItem('sidebar-toggle-collapsed'))) {
+                var body = document.getElementsByTagName('body')[0];
+                body.className = body.className + ' sidebar-collapse';
+            }
+        })();
+    </script>
+    <div class="wrapper">
+        <partial name="_AdminHeader" />
+        <partial name="_AdminSidebar" />
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                </h1>
+            </section>
+
+            <section class="content">
+                @RenderBody()
+            </section>
+            <footer style="text-align: center;" class="footer">
+                <p> &copy; @DateTime.Now.Year Company, Inc. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function ($) {
+            /* Store sidebar state */
+            $('.sidebar-toggle').click(function (event) {
+                event.preventDefault();
+                if (Boolean(localStorage.getItem('sidebar-toggle-collapsed'))) {
+                    localStorage.setItem('sidebar-toggle-collapsed', '');
+                } else {
+                    localStorage.setItem('sidebar-toggle-collapsed', '1');
+                }
+            });
+        })(jQuery);
+    </script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

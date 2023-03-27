@@ -1,8 +1,9 @@
 ﻿@{ 
-    Layout = "../_Layout";
+    Layout = "_Layout";
     ViewData["theme"] = "success";
     ViewData["banner"] = "Administration Dashboard";
     ViewData["navPartial"] = "_AdminWorkflows";
 }
-
+<bundle name="wwwroot/bundles/site.min.css" />
+<bundle name="wwwroot/bundles/site.min.js" />
 @RenderBody()

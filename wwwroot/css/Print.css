@@ -1,0 +1,249 @@
+﻿@media print {
+    .table-print-red thead th {
+        background-color: #dd4b39 !important;
+        font-weight: bold !important;
+        color: Black !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        /*font-size: 12pt !important;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;*/
+    }
+
+    a.hidden-print-href[href]:after {
+        content: none !important;
+    }
+
+    @page {
+        size: A4 portrait;
+        max-height: 100%;
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    .page-break {
+        height: 0;
+        page-break-before: always;
+        margin: 0;
+        border-top: none;
+    }
+
+
+    body, p, a,
+    span, td {
+        font-size: 9pt;
+        white-space: nowrap;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    html {
+        zoom: 85%;
+    }
+
+    .page {
+        height: 947px;
+        padding-top: 9px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        page-break-after: always;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        border-bottom: 1px solid #000;
+    }
+
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4,
+    .col-md-5, .col-md-6, .col-md-7, .col-md-8,
+    .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+
+    .col-md-1 {
+        width: 8%;
+    }
+
+    .col-md-2 {
+        width: 16%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33%;
+    }
+
+    .col-md-5 {
+        width: 42%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58%;
+    }
+
+    .col-md-8 {
+        width: 66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83%;
+    }
+
+    .col-md-11 {
+        width: 92%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+
+    .rowcolorred {
+        background-color: #C2141D;
+        font-weight: bold;
+        color: White;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica';
+        text-decoration: none;
+        font-size: 12pt;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .rowcolorgreen {
+        background-color: #248B3C !important;
+        font-weight: bold !important;
+        color: White !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        font-size: 12pt !important;
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcolorgrayprint {
+        background-color: lightgray !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        font-size: 12pt !important;
+        margin-bottom: 5px !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcolorwhiteprint {
+        background-color: #fff !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;
+        margin-left: 1px !important;
+        margin: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcolorwhite1print {
+        background-color: #fff !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        border-collapse: collapse !important;
+        border-bottom: solid !important;
+        border-top: solid !important;
+        border-left: solid !important;
+        border-right: solid !important;
+        border-width: thin !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcontainer {
+        margin-right: 5px !important;
+        margin-left: 5px !important;
+    }
+
+    .rowcolorgray1print {
+        background-color: #dcdcdc !important;
+        background: #dcdcdc !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcolorsilverprint {
+        background-color: silver !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcoloryellowprint {
+        background-color: #ffffcc !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcolorblurywoodprint {
+        background-color: BurlyWood !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .rowcolorblueprint {
+        background-color: #0066CC !important;
+        font-weight: bold !important;
+        color: White !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        font-size: 12pt !important;
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;
+        margin-left: 1px !important;
+        margin-right: 1px !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .form-groupprint {
+        margin-bottom: 0px !important;
+    }
+
+    .rowcolorwhite2print {
+        background-color: #fff !important;
+        font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica' !important;
+        text-decoration: none !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+
+}

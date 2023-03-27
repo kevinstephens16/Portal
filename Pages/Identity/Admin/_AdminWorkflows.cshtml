@@ -5,39 +5,25 @@
         feature != null && feature.Equals(Model.workflow) ? "active" : "";
 }
 
-<a class="btn btn-@Model.theme btn-block @getClass("Dashboard")" 
-        asp-page="Dashboard">
-    Dashboard
-</a>
-<a class="btn btn-@Model.theme btn-block @getClass("Features")" asp-page="Features">
-    Store Features
-</a>
-<a class="btn btn-success btn-block @getClass("List")" asp-page="View" 
-        asp-route-id="">
-    List Users
-</a>
-<a class="btn btn-success btn-block @getClass("Create")" asp-page="Create">
-    Create Account
-</a>
-<a class="btn btn-success btn-block @getClass("Delete")" asp-page="Delete">
-    Delete Account
-</a>
-<a class="btn btn-success btn-block @getClass("Edit")" asp-page="Edit" 
-        asp-route-id="">
-    Edit Users
-</a>
-<a class="btn btn-success btn-block @getClass("Passwords")" asp-page="Passwords" 
-        asp-route-id="">
-    Passwords
-</a>
-<a class="btn btn-success btn-block @getClass("Lockouts")" asp-page="Lockouts" >
-    Lockouts
-</a>
-<a class="btn btn-success btn-block @getClass("Roles")" 
-        asp-page="Roles" asp-route-id="">
-    Edit Roles
-</a>
-<a class="btn btn-success btn-block @getClass("Claims")" 
-        asp-page="Claims" asp-route-id="">
-    Claims
-</a>
+
+
+
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header"></li>
+            <li title="Dasboard"><a class="@getClass("Dashboard")" asp-page="Dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li title="Store Features"><a class="@getClass("Features")" asp-page="Features"><i class="fa fa-dashboard"></i> <span>Store Features</span></a></li>
+            <li title="List Users"><a class="@getClass("List")" asp-page="View" asp-route-id=""><i class="fa fa-dashboard"></i> <span>List Users</span></a></li>
+            <li title="Create Account"><a class="@getClass("Create")" asp-page="Create"><i class="fa fa-pencil"></i> <span>Create Account</span></a></li>
+            <li title="Delete Account"><a class="@getClass("Delete")" asp-page="Delete"><i class="fa fa-trash"></i> <span>Delete Account</span></a></li>
+            <li title="Edit Users"><a class="@getClass("Edit")" asp-page="Edit" asp-route-id=""><i class="fa fa-pencil"></i> <span>Edit Users</span></a></li>
+            <li title="Passwords"><a class="@getClass("Passwords")" asp-page="Passwords" asp-route-id=""><i class="fa fa-pencil"></i> <span>Passwords</span></a></li>
+            <li title="Lockouts"><a class="@getClass("Lockouts")" asp-page="Lockouts"><i class="fa fa-pencil"></i> <span>Lockouts</span></a></li>
+            <li title="Edit Roles"><a class="@getClass("Roles")" asp-page="Roles" asp-route-id=""><i class="fa fa-pencil"></i> <span>Edit Roles</span></a></li>
+            <li title="Claims"><a class="@getClass("Claims")" asp-page="Claims" asp-route-id=""><i class="fa fa-dashboard"></i> <span>Claims</span></a></li>
+
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

@@ -1,8 +1,19 @@
 ﻿@page "{returnUrl?}"
 @model Portal.Pages.Identity.SignInModel
 @{
-    ViewData["showNav"] = false;
+    ViewData["showNav"] = true;
+    ViewData["showHeader"] = true;
     ViewData["banner"] = "Sign In";
+    ViewData["workflow"] = "";
+    ViewData["navPartial"] = "";
+    ViewData["theme"] = "";
+
+    //string theme = ViewData["theme"] as string ?? "primary";
+    //bool showNav = ViewData["showNav"] as bool? ?? true;
+    //string navPartial = ViewData["navPartial"] as string ?? "_Workflows";
+    //string workflow = ViewData["workflow"] as string;
+    //string banner = ViewData["banner"] as string ?? "User Dashboard";
+    //bool showHeader = ViewData["showHeader"] as bool? ?? true;
 }
 
 <div asp-validation-summary="All" class="text-danger m-2"></div>

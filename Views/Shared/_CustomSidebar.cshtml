@@ -1,0 +1,40 @@
+﻿@{
+    Func<string, string> getClass = (string feature) =>
+        feature != null && feature.Equals(Model.workflow) ? "active" : "";
+}
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        @*<form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+        <i class="fa fa-search"></i>
+        </button>
+        </span>
+        </div>
+        </form>*@
+        @* END Search *@
+        @* BEGIN Menu *@
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header"></li>
+            <li class="treeview" title="Home">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> <span>Home</span></a>
+            </li>
+            <li title="Admin"><a href="~/Identity/Admin"><i class="fa fa-dashboard"></i> <span>Admin</span></a></li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-folder"></i> <span>Dropdown</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li title="Item1"><a href="@Url.Action("Home", "Index")"><i class="fa fa-dashboard"></i> <span>Item1</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

@@ -283,3 +283,7 @@ C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Sys
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\dotnet-bundle.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\BundlerMinifier.TagHelpers.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\NUglify.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

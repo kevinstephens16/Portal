@@ -47,6 +47,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "BundlerMinifier.TagHelpers": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
+            "Chart.js": {
+              "target": "Package",
+              "version": "[3.7.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.3, )"
@@ -76,6 +88,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "Moment.js": {
+              "target": "Package",
+              "version": "[2.29.4, )"
+            },
+            "glyphicon": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

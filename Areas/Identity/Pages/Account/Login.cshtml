@@ -5,13 +5,27 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
+<style>
+    form {
+        width: 300px; /* this is needed */
+        height: 200px; /* this is needed */
+        padding: 10px; /* this is for styling only */
+       /* background: #eee;*/ /* this is for styling only */
+
+        position: absolute; /* this is needed */
+        margin: auto; /* this is needed */
+        left: 0; /* this is needed */
+        right: 0; /* this is needed */
+        top: 0; /* this is needed */
+        bottom: 0; /* this is needed */
+    }
+</style>
+@*<h1>@ViewData["Title"]</h1>*@
+<div class="container">
 <div class="row">
-    <div class="col-md-4">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <section>
             <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Input.Email"></label>
@@ -48,7 +62,7 @@
             </form>
         </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+   @* <div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to log in.</h4>
             <hr />
@@ -77,9 +91,9 @@
                 }
             }
         </section>
-    </div>
+    </div>*@
 </div>
-
+</div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
