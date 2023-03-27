@@ -19,19 +19,22 @@
         @* BEGIN Menu *@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
-            <li class="treeview" title="Home">
-                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> <span>Home</span></a>
+            <li title="Home"><a href="~/Store/Index"><i class="fa fa-home"></i> <span>Home</span></a></li>
             </li>
             <li title="Admin"><a href="~/Identity/Admin"><i class="fa fa-dashboard"></i> <span>Admin</span></a></li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i> <span>Dropdown</span>
+                    <i class="fa fa-folder"></i> <span>Profile</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li title="Item1"><a href="@Url.Action("Home", "Index")"><i class="fa fa-dashboard"></i> <span>Item1</span></a></li>
+                    <li title="Profile Info"><a href="~/Identity/Index"><i class="fa fa-dashboard"></i> <span>Profile Info</span></a></li>
+                    <li title="Password Change"><a href="~/Identity/UserPasswordChange"><i class="fa fa-dashboard"></i> <span>Password Change</span></a></li>
+                    <li title="Two Factor Setup"><a href="~/Identity/UserTwoFactorSetup"><i class="fa fa-dashboard"></i> <span>Two Factor Setup</span></a></li>
+                    <li title="Two Factor Manage"><a href="~/Identity/UserTwoFactorManage"><i class="fa fa-dashboard"></i> <span>Two Factor Manage</span></a></li>
+                    <li title="Recovery Codes"><a href="~/Identity/UserRecoveryCodes"><i class="fa fa-dashboard"></i> <span>Recovery Codes</span></a></li>
                 </ul>
             </li>
         </ul>
