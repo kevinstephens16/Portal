@@ -11,7 +11,7 @@ using System;
 using System.Text;
 
 namespace Portal.Controllers {
-
+    // This is not fully working or I have not figured out how it works
     [ApiController]
     [Route("/api/auth")]
     public class ApiAuthController : ControllerBase {

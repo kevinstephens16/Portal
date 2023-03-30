@@ -48,11 +48,14 @@ namespace Portal
                 );
             });
 
+            //Code need to be written to send email
             services.AddScoped<IEmailSender, ConsoleEmailSender>();
 
+            //Enable this to use Authorization when register
             //services.AddDefaultIdentity<IdentityUser>()
             //    .AddEntityFrameworkStores<IdentityDbContext>();
 
+            //Disable if or reconfigure to use Authorization when register new account
             services.AddIdentity<IdentityUser, IdentityRole>(opts =>
             {
                 opts.Password.RequiredLength = 8;
@@ -70,6 +73,7 @@ namespace Portal
             });
 
             services.AddScoped<TokenUrlEncoderService>();
+            //Code need to be written to send email
             services.AddScoped<IdentityEmailService>();
 
             ////*****************************************************************************************
@@ -98,6 +102,7 @@ namespace Portal
     //            Configuration["BearerTokens:Key"]));
     //});
 
+            //This part is used for Google, Facebook, Twitter auth Login
             services.ConfigureApplicationCookie(opts =>
             {
                 opts.LoginPath = "/Identity/SignIn";
