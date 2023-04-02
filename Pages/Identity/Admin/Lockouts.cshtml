@@ -4,7 +4,12 @@
     ViewBag.Workflow = "Lockouts";
 }
 
-<table class="table table-sm table-striped table-bordered">
+@*<link rel="stylesheet" href="~/css/DataTables/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="~/scripts/DataTables/jquery.dataTables.js"></script>*@
+
+
+
+<table class="table table-sm table-striped table-bordered" id="datatable1">
     <thead>
         <tr><th class="text-center py-2" colspan="3">Locked Out Users</th></tr>
     </thead>
@@ -39,7 +44,7 @@
     </tbody>
 </table> 
 
-<table class="table table-sm table-striped table-bordered">
+<table class="table table-sm table-striped table-bordered" id="datatable2">
     <thead>
         <tr><th class="text-center py-2" colspan="2">Other Users</th></tr>
     </thead>

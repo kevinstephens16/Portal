@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
 
-namespace Portal.Services {
+namespace Portal.Services
+{
 
-    public class TokenUrlEncoderService {
+    public class TokenUrlEncoderService
+    {
 
         public virtual string EncodeToken(string token)
             => WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));

@@ -4,15 +4,18 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Routing;
 using System.Threading.Tasks;
 
-namespace Portal.Services {
+namespace Portal.Services
+{
 
-    public class IdentityEmailService {
+    public class IdentityEmailService
+    {
 
         public IdentityEmailService(IEmailSender sender,
                 UserManager<IdentityUser> userMgr,
                 IHttpContextAccessor contextAccessor,
                 LinkGenerator generator,
-                TokenUrlEncoderService encoder) {
+                TokenUrlEncoderService encoder)
+        {
             EmailSender = sender;
             UserManager = userMgr;
             ContextAccessor = contextAccessor;
@@ -26,14 +29,16 @@ namespace Portal.Services {
         public LinkGenerator LinkGenerator { get; set; }
         public TokenUrlEncoderService TokenEncoder { get; set; }
 
-        private string GetUrl(string emailAddress, string token, string page) {
+        private string GetUrl(string emailAddress, string token, string page)
+        {
             string safeToken = TokenEncoder.EncodeToken(token);
             return LinkGenerator.GetUriByPage(ContextAccessor.HttpContext, page,
                 null, new { email = emailAddress, token = safeToken });
         }
 
         public async Task SendPasswordRecoveryEmail(IdentityUser user,
-                string confirmationPage) {
+                string confirmationPage)
+        {
             string token = await UserManager.GeneratePasswordResetTokenAsync(user);
             string url = GetUrl(user.Email, token, confirmationPage);
             await EmailSender.SendEmailAsync(user.Email, "Set Your Password",
@@ -41,7 +46,8 @@ namespace Portal.Services {
         }
 
         public async Task SendAccountConfirmEmail(IdentityUser user,
-                string confirmationPage) {
+                string confirmationPage)
+        {
             string token =
                 await UserManager.GenerateEmailConfirmationTokenAsync(user);
             string url = GetUrl(user.Email, token, confirmationPage);

@@ -1,28 +1,51 @@
 ﻿@model (string workflow, string theme)
+@{
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<IdentityUser> SignInManager
 
-@{ 
-    Func<string, string> getClass = (string feature) => 
+    @inject UserManager<IdentityUser> UserManager
+    Func<string, string> getClass = (string feature) =>
         feature != null && feature.Equals(Model.workflow) ? "active" : "";
 }
 
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" media="all" type="image/x-icon" href="favicon.ico">
+<link rel="icon" media="all" type="image/x-icon" href="favicon.ico"><!-- ico not png -->
+<meta content="width=device-width, initial-scale=1", name="viewport">
+<title>@ViewData["Title"] - Portal</title>
+<bundle name="wwwroot/bundles/site.min.css" />
+<bundle name="wwwroot/bundles/site.min.js" />
 
 
 <aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
+            <li title="Main"><a href="~/Home/Index"><i class="fa fa-home"></i> <span>Home</span></a></li>
+            <li title="Main"><a href="~/Store/Index"><i class="fa fa-home"></i> <span>Main</span></a></li>
             <li title="Dasboard"><a class="@getClass("Dashboard")" asp-page="Dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-            <li title="Store Features"><a class="@getClass("Features")" asp-page="Features"><i class="fa fa-dashboard"></i> <span>Store Features</span></a></li>
-            <li title="List Users"><a class="@getClass("List")" asp-page="View" asp-route-id=""><i class="fa fa-dashboard"></i> <span>List Users</span></a></li>
-            <li title="Create Account"><a class="@getClass("Create")" asp-page="Create"><i class="fa fa-pencil"></i> <span>Create Account</span></a></li>
+            <li title="Store Features"><a class="@getClass("Features")" asp-page="Features"><i class="fa fa-file"></i> <span>Store Features</span></a></li>
+            <li title="List Users"><a class="@getClass("List")" asp-page="View" asp-route-id=""><i class="fa fa-file"></i> <span>List Users</span></a></li>
+            <li title="Create Account"><a class="@getClass("Create")" asp-page="Create"><i class="fa fa-plus"></i> <span>Create Account</span></a></li>
             <li title="Delete Account"><a class="@getClass("Delete")" asp-page="Delete"><i class="fa fa-trash"></i> <span>Delete Account</span></a></li>
             <li title="Edit Users"><a class="@getClass("Edit")" asp-page="Edit" asp-route-id=""><i class="fa fa-pencil"></i> <span>Edit Users</span></a></li>
             <li title="Passwords"><a class="@getClass("Passwords")" asp-page="Passwords" asp-route-id=""><i class="fa fa-pencil"></i> <span>Passwords</span></a></li>
-            <li title="Lockouts"><a class="@getClass("Lockouts")" asp-page="Lockouts"><i class="fa fa-pencil"></i> <span>Lockouts</span></a></li>
+            <li title="Lockouts"><a class="@getClass("Lockouts")" asp-page="Lockouts"><i class="fa fa-lock"></i> <span>Lockouts</span></a></li>
             <li title="Edit Roles"><a class="@getClass("Roles")" asp-page="Roles" asp-route-id=""><i class="fa fa-pencil"></i> <span>Edit Roles</span></a></li>
             <li title="Claims"><a class="@getClass("Claims")" asp-page="Claims" asp-route-id=""><i class="fa fa-dashboard"></i> <span>Claims</span></a></li>
-
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="nav-item">
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Page("/", new { area = "" })"
+                          method="post">
+                        <button type="submit" class="btn btn-link text-white">
+                            <i class="fa fa-power-off"></i><span> Logout</span>
+                        </button>
+                    </form>
+                </li>
+            }
         </ul>
         @* END Menu *@
     </section>

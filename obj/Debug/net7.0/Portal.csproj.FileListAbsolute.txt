@@ -287,3 +287,6 @@ C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\dotnet-bundle.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\BundlerMinifier.TagHelpers.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\NUglify.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\log4net.config
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\log4net.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll

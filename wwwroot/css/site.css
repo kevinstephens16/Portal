@@ -20,3 +20,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+.rowcolorgray {
+    background-color: lightgray;
+    font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica';
+    text-decoration: none;
+    font-size: 12pt;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+}

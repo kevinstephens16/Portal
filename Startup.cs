@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+
 namespace Portal
 {
 
@@ -67,6 +68,18 @@ namespace Portal
             }).AddEntityFrameworkStores<IdentityDbContext>()
               .AddDefaultTokenProviders();
 
+            //services.AddDefaultIdentity<ApplicationUser>(opts =>
+            //{
+            //    opts.Password.RequiredLength = 8;
+            //    opts.Password.RequireDigit = false;
+            //    opts.Password.RequireLowercase = false;
+            //    opts.Password.RequireUppercase = false;
+            //    opts.Password.RequireNonAlphanumeric = false;
+            //    opts.SignIn.RequireConfirmedAccount = false;
+            //})
+            //  .AddEntityFrameworkStores<ApplicationDbContext>()
+            // .AddDefaultTokenProviders();
+
             services.Configure<SecurityStampValidatorOptions>(opts =>
             {
                 opts.ValidationInterval = System.TimeSpan.FromMinutes(1);
@@ -78,35 +91,37 @@ namespace Portal
 
             ////*****************************************************************************************
             //services.AddAuthentication()
-    //.AddFacebook(opts =>
-    //{
-    //    opts.AppId = Configuration["Facebook:AppId"];
-    //    opts.AppSecret = Configuration["Facebook:AppSecret"];
-    //})
-    //.AddGoogle(opts =>
-    //{
-    //    opts.ClientId = Configuration["Google:ClientId"];
-    //    opts.ClientSecret = Configuration["Google:ClientSecret"];
-    //})
-    //.AddTwitter(opts =>
-    //{
-    //    opts.ConsumerKey = Configuration["Twitter:ApiKey"];
-    //    opts.ConsumerSecret = Configuration["Twitter:ApiSecret"];
-    //    opts.RetrieveUserDetails = true;
-    //}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opts =>
-    //{
-    //    opts.TokenValidationParameters.ValidateAudience = false;
-    //    opts.TokenValidationParameters.ValidateIssuer = false;
-    //    opts.TokenValidationParameters.IssuerSigningKey
-    //        = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-    //            Configuration["BearerTokens:Key"]));
-    //});
+            //.AddFacebook(opts =>
+            //{
+            //    opts.AppId = Configuration["Facebook:AppId"];
+            //    opts.AppSecret = Configuration["Facebook:AppSecret"];
+            //})
+            //.AddGoogle(opts =>
+            //{
+            //    opts.ClientId = Configuration["Google:ClientId"];
+            //    opts.ClientSecret = Configuration["Google:ClientSecret"];
+            //})
+            //.AddTwitter(opts =>
+            //{
+            //    opts.ConsumerKey = Configuration["Twitter:ApiKey"];
+            //    opts.ConsumerSecret = Configuration["Twitter:ApiSecret"];
+            //    opts.RetrieveUserDetails = true;
+            //}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opts =>
+            //{
+            //    opts.TokenValidationParameters.ValidateAudience = false;
+            //    opts.TokenValidationParameters.ValidateIssuer = false;
+            //    opts.TokenValidationParameters.IssuerSigningKey
+            //        = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+            //            Configuration["BearerTokens:Key"]));
+            //});
 
             //This part is used for Google, Facebook, Twitter auth Login
             services.ConfigureApplicationCookie(opts =>
             {
-                opts.LoginPath = "/Identity/SignIn";
-                opts.LogoutPath = "/Identity/SignOut";
+                //opts.LoginPath = "/Identity/SignIn";
+                opts.LoginPath = "/Identity/Account/Login";
+                opts.LoginPath = "/Identity/Account/Logout";
+                //opts.LogoutPath = "/Identity/SignOut";
                 opts.AccessDeniedPath = "/Identity/Forbidden";
                 opts.Events.DisableRedirectionForApiClients();
             });

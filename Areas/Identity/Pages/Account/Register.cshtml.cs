@@ -60,6 +60,24 @@ namespace Portal.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            //[Required]
+            //[Phone]
+            //[Display(Name = "Cell")]
+            //public string CellNumber { get; set; }
+
+            [Required]
+            [Phone]
+            [Display(Name = "Phone")]
+            public string PhoneNumber { get; set; }
+
+            //[Required]
+            //[Display(Name = "First Name")]
+            //public string FirstName { get; set; }
+
+            //[Required]
+            //[Display(Name = "Last Name")]
+            //public string LastName { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -74,7 +92,7 @@ namespace Portal.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email, PhoneNumber = Input.PhoneNumber };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

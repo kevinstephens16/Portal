@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Security.Claims;
 
-namespace Portal.Models {
+namespace Portal.Models
+{
 
-    public static class ApplicationClaimTypes {
+    public static class ApplicationClaimTypes
+    {
         public const string Country = ClaimTypes.Country;
         public const string SecurityClearance = "SecurityClearance";
 

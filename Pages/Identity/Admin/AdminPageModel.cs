@@ -3,7 +3,7 @@
 namespace Portal.Pages.Identity.Admin {
 
     //[AllowAnonymous]
-    [Authorize(Roles = "Dashboard")]
+    [Authorize(Roles = "Admin")]
     public class AdminPageModel : UserPageModel {
 
         // no methods or properties required

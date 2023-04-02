@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Portal.Controllers {
+namespace Portal.Controllers
+{
 
     [Authorize(Roles = "Admin")]
-    public class AdminController : Controller {
+    public class AdminController : Controller
+    {
         private ProductDbContext DbContext;
 
         public AdminController(ProductDbContext ctx) => DbContext = ctx;
@@ -16,25 +18,30 @@ namespace Portal.Controllers {
         public IActionResult Create() => View("Edit", new Product());
 
         [HttpGet]
-        public IActionResult Edit(long id) {
+        public IActionResult Edit(long id)
+        {
             Product p = DbContext.Find<Product>(id);
-            if (p != null) {
+            if (p != null)
+            {
                 return View("Edit", p);
             }
             return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
-        public IActionResult Save(Product p) {
+        public IActionResult Save(Product p)
+        {
             DbContext.Update(p);
             DbContext.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
-        public IActionResult Delete(long id) {
+        public IActionResult Delete(long id)
+        {
             Product p = DbContext.Find<Product>(id);
-            if (p != null) {
+            if (p != null)
+            {
                 DbContext.Remove(p);
                 DbContext.SaveChanges();
             }

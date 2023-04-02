@@ -5,16 +5,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-namespace Portal.Controllers {
+namespace Portal.Controllers
+{
 
     // This is not fully working or I have not figured out how it works
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("/api/data")]
-    public class ValuesController : ControllerBase {
+    public class ValuesController : ControllerBase
+    {
         public ProductDbContext DbContext;
 
-        public ValuesController(ProductDbContext dbContext) {
+        public ValuesController(ProductDbContext dbContext)
+        {
             DbContext = dbContext;
         }
 
@@ -25,9 +28,12 @@ namespace Portal.Controllers {
 
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody]
-                ProductBindingTarget target) {
-            if (ModelState.IsValid) {
-                Product product = new Product {
+                ProductBindingTarget target)
+        {
+            if (ModelState.IsValid)
+            {
+                Product product = new Product
+                {
                     Name = target.Name,
                     Price = target.Price,
                     Category = target.Category
@@ -40,13 +46,15 @@ namespace Portal.Controllers {
         }
 
         [HttpDelete("{id}")]
-        public Task DeleteProduct(long id) {
+        public Task DeleteProduct(long id)
+        {
             DbContext.Products.Remove(new Product { Id = id });
             return DbContext.SaveChangesAsync();
         }
     }
 
-    public class ProductBindingTarget {
+    public class ProductBindingTarget
+    {
         [Required]
         public string Name { get; set; }
 

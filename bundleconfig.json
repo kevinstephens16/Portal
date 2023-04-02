@@ -32,7 +32,7 @@
       "wwwroot/css/skins/skin-default.css",
       "wwwroot/css/AdminLTE.css",
       "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
-      "wwwroot/lib/font-awesome/css/all.min.css",
+      "wwwroot/lib/font-awesome/css/all.css",
       "wwwroot/css/site.css"
     ]
   },
@@ -42,7 +42,8 @@
       "wwwroot/scripts/jquery-3.1.1.js",
       "wwwroot/scripts/jquery-3.6.3.min.js",
       "wwwroot/css/js/adminlte.js",
-      "wwwroot/js/site.js"
+      "wwwroot/js/site.js",
+      "wwwroot/lib/font-awesome/js/all.min.js"
     ],
     "minify": {
       "enabled": true,

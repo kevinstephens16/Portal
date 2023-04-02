@@ -10,18 +10,21 @@ using System.Linq;
 using System;
 using System.Text;
 
-namespace Portal.Controllers {
+namespace Portal.Controllers
+{
     // This is not fully working or I have not figured out how it works
     [ApiController]
     [Route("/api/auth")]
-    public class ApiAuthController : ControllerBase {
+    public class ApiAuthController : ControllerBase
+    {
         private SignInManager<IdentityUser> SignInManager;
         private UserManager<IdentityUser> UserManager;
         private IConfiguration Configuration;
 
         public ApiAuthController(SignInManager<IdentityUser> signMgr,
                 UserManager<IdentityUser> usrMgr,
-                IConfiguration config) {
+                IConfiguration config)
+        {
             SignInManager = signMgr;
             UserManager = usrMgr;
             Configuration = config;
@@ -29,12 +32,15 @@ namespace Portal.Controllers {
 
         [HttpPost("signin")]
         public async Task<object> ApiSignIn(
-                [FromBody] SignInCredentials creds) {
+                [FromBody] SignInCredentials creds)
+        {
             IdentityUser user = await UserManager.FindByEmailAsync(creds.Email);
             SignInResult result = await SignInManager.CheckPasswordSignInAsync(user,
                 creds.Password, true);
-            if (result.Succeeded) {
-                SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor {
+            if (result.Succeeded)
+            {
+                SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor
+                {
                     Subject = (await SignInManager.CreateUserPrincipalAsync(user))
                         .Identities.First(),
                     Expires = DateTime.Now.AddMinutes(int.Parse(
@@ -59,7 +65,8 @@ namespace Portal.Controllers {
         //}
     }
 
-    public class SignInCredentials {
+    public class SignInCredentials
+    {
         [Required]
         public string Email { get; set; }
         [Required]

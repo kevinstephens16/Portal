@@ -1,43 +1,27 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 <header class="main-header">
     @* BEGIN Logo *@
     <a href="~/Store" class="logo">
         @* Mini logo for sidebar 50x50 pixels *@
-     @*   <span class="logo-mini text-black"><img src="~/Content/Images/" alt="4PCB" style="border: 0px;" /></span>*@
+        <span class="logo-mini text-black"><img src="~/images/" alt="Name Here" style="border: 0px;" /></span>
         @* Logo for regular state and mobile devices *@
-        @*<span class="logo-lg"><img src="~/Content/Images/" alt="" style="border: 0px" /></span>*@
+        <span class="logo-lg"><img src="~/images/" alt="Name Here" style="border: 0px" /></span>
     </a>
-    @* END Logo *@
-    @* BEGIN Header *@
     <nav class="navbar navbar-static-top" role="navigation">
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                @* BEGIN User Account Menu *@
-                <li class="dropdown user user-menu">
-                    @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">*@
-                    @*<a href="@Url.Action("ProfileInfo", "Profile")" >
-                    <span class="hidden-xs"><i class="fa fa-user"></i> @Session["strFullName"].ToString()</span>
-                    </a>*@
-                    @*<ul class="dropdown-menu">
-                    <li class="user-footer">
-                    div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                    </li>
-                    </ul>*@
-                </li>
-                @* END User Account Menu *@
-                @* BEGIN Control Sidebar Toggle Button *@
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <span class="hidden-xs text-white"><i class="fa fa-user"></i> @User.Identity.Name</span>
+                }
 
-                @* END Control Sidebar Toggle Button *@
             </ul>
         </div>
-        <div class="text-white float-right"><partial name="_LoginPartial" /></div>
     </nav>
 </header>

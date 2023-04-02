@@ -8,18 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Data\**" />
-    <Content Remove="Data\**" />
-    <EmbeddedResource Remove="Data\**" />
-    <None Remove="Data\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Migrations\ApplicationDbContext.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Identity\Pages\Account\Manage\_Layout.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml" />
     <Content Remove="bundleconfig.json" />
+    <Content Remove="Pages\Identity\Admin\_Admin1Layout.cshtml" />
+    <Content Remove="Pages\Identity\Admin\_AdminSidebar.cshtml" />
+    <Content Remove="Views\Shared\_ExternalButtonPartial.cshtml" />
+    <Content Remove="Views\Shared\_InfoLayout.cshtml" />
+    <Content Remove="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,12 +36,14 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.4" />
     <PackageReference Include="Moment.js" Version="2.29.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,27 +1,21 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
     Func<string, string> getClass = (string feature) =>
         feature != null && feature.Equals(Model.workflow) ? "active" : "";
 }
 <aside class="main-sidebar">
     <section class="sidebar">
-        @* BEGIN Search *@
-        @*<form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-        <i class="fa fa-search"></i>
-        </button>
-        </span>
-        </div>
-        </form>*@
-        @* END Search *@
-        @* BEGIN Menu *@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
+            <li title="Main"><a href="~/Home/Index"><i class="fa fa-home"></i> <span>Main</span></a></li>
             <li title="Home"><a href="~/Store/Index"><i class="fa fa-home"></i> <span>Home</span></a></li>
-            </li>
-            <li title="Admin"><a href="~/Identity/Admin"><i class="fa fa-dashboard"></i> <span>Admin</span></a></li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li title="Admin"><a href="~/Identity/Admin"><i class="fa fa-dashboard"></i> <span>Admin</span></a></li>
+            }
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-folder"></i> <span>Profile</span>
@@ -30,14 +24,25 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li title="Profile Info"><a href="~/Identity/Index"><i class="fa fa-dashboard"></i> <span>Profile Info</span></a></li>
-                    <li title="Password Change"><a href="~/Identity/UserPasswordChange"><i class="fa fa-dashboard"></i> <span>Password Change</span></a></li>
-                    <li title="Two Factor Setup"><a href="~/Identity/UserTwoFactorSetup"><i class="fa fa-dashboard"></i> <span>Two Factor Setup</span></a></li>
-                    <li title="Two Factor Manage"><a href="~/Identity/UserTwoFactorManage"><i class="fa fa-dashboard"></i> <span>Two Factor Manage</span></a></li>
-                    <li title="Recovery Codes"><a href="~/Identity/UserRecoveryCodes"><i class="fa fa-dashboard"></i> <span>Recovery Codes</span></a></li>
+                    <li title="Profile Info"><a href="~/Identity/Index"><i class="fa fa-user"></i> <span>Profile Info</span></a></li>
+                    <li title="Password Change"><a href="~/Identity/UserPasswordChange"><i class="fa fa-pencil"></i> <span>Password Change</span></a></li>
+                    <li title="Two Factor Setup"><a href="~/Identity/UserTwoFactorSetup"><i class="fa fa-link"></i> <span>Two Factor Setup</span></a></li>
+                    <li title="Two Factor Manage"><a href="~/Identity/UserTwoFactorManage"><i class="fa fa-link"></i> <span>Two Factor Manage</span></a></li>
+                    <li title="Recovery Codes"><a href="~/Identity/UserRecoveryCodes"><i class="fa fa-link"></i> <span>Recovery Codes</span></a></li>
                 </ul>
             </li>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="nav-item">
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Page("/", new { area = "" })"
+                          method="post">
+                        <button type="submit" class="btn btn-link text-white">
+                            <i class="fa fa-power-off"></i><span> Logout</span>
+                        </button>
+                    </form>
+                </li>
+            }
         </ul>
-        @* END Menu *@
     </section>
 </aside>

@@ -1,10 +1,14 @@
 ﻿@model (string workflow, string theme)
 @inject UserManager<IdentityUser> UserManager
+
 @{ 
     Func<string, string> getClass = (string feature) => 
         feature != null && feature.Equals(Model.workflow) ? "active" : "";
 
-    IdentityUser identityUser 
+    //IdentityUser identityUser 
+    //    = await UserManager.GetUserAsync(User) ?? new IdentityUser();
+
+    IdentityUser identityUser
         = await UserManager.GetUserAsync(User) ?? new IdentityUser();
 }
 

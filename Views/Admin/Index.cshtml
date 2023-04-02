@@ -1,35 +1,68 @@
 ﻿@model IQueryable<Product>
 
-<h4 class="bg-primary text-white text-center p-2">MVC Level 3 - Administrators</h4>
+@{
+    ViewData["Title"] = "Admin";
+}
+<link rel="stylesheet" href="~/css/site.css">
+<link rel="stylesheet" href="~/css/DataTables/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="~/scripts/DataTables/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            order: [[0, 'asc']],
+        });
+    });
+</script>
 
-<div class="p-2">
-    <table class="table table-sm table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th><th>Name</th><th>Category</th>
-                <th class="text-right">Price</th><th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Product p in Model.OrderBy(p => p.Id)) {
-                <tr>
-                    <td>@p.Id</td>
-                    <td>@p.Name</td>
-                    <td>@p.Category</td>
-                    <td class="text-right">$@p.Price.ToString("F2")</td>
-                    <td class="text-center">
-                        <form method="post">
-                            <a class="btn btn-sm btn-warning" asp-action="edit" 
-                                asp-route-id="@p.Id">Edit</a>
-                            <button class="btn btn-sm btn-danger" 
-                                asp-action="delete" asp-route-id="@p.Id">
-                                    Delete
-                            </button>
-                        </form>
-                    </td>
-                </tr>                
-            }
-        </tbody>
-    </table>
+<div class="box box-widget">
+    <div class="box-header with-border text-center bg-black text-white">
+        <h3>MVC Level 3 - Administrators</h3>
+    </div>
+    <div class="box-body">
+        <div class="box-body">
+            <div class="row form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table class="table table-sm table-striped table-bordered" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th class="text-right">Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Product p in Model.OrderBy(p => p.Id))
+                            {
+                                <tr>
+                                    <td>@p.Id</td>
+                                    <td>@p.Name</td>
+                                    <td>@p.Category</td>
+                                    <td class="text-right">$@p.Price.ToString("F2")</td>
+                                    <td class="text-center">
+                                        <form method="post">
+                                            <a class="btn btn-sm btn-warning" asp-action="edit"
+                                           asp-route-id="@p.Id">Edit</a>
+                                            <button class="btn btn-sm btn-danger"
+                                                asp-action="delete" asp-route-id="@p.Id">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                </div>
+                <a class="btn btn-primary mx-2" asp-action="Create">Create</a>
+            </div>
+        </div>
+        <div class="box-footer text-center">
+        </div>
+    </div>
 </div>
-<a class="btn btn-primary mx-2" asp-action="Create">Create</a>

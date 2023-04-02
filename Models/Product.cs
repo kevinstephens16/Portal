@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Portal.Models {
+namespace Portal.Models
+{
 
-    public class Product {
+    public class Product
+    {
         public long Id { get; set; }
 
         public string Name { get; set; }

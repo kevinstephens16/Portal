@@ -2,23 +2,17 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Portal</title>
-@*    <link rel="stylesheet" href="/Identity/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/Identity/css/site.css" />
-    <script src="/Identity/lib/jquery/dist/jquery.js"></script>
-    <script src="/Identity/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="/Identity/js/site.js" asp-append-version="true"></script>
-    <script type="text/javascript" src="/lib/qrcode/qrcode.min.js"></script>
-    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />*@
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" media="all" type="image/x-icon" href="~/Content/Images/favicon.ico">
+    <link rel="icon" media="all" type="image/x-icon" href="~/Content/Images/favicon.ico"><!-- ico not png -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@ViewData["Title"] - Portal</title>
     <bundle name="wwwroot/bundles/site.min.css" />
     <bundle name="wwwroot/bundles/site.min.js" />
+
 </head>
 <body>
-    @*<nav class="navbar navbar-dark bg-secondary">
-        <a class="navbar-brand text-white">Portal</a>
-        <div class="text-white"><partial name="_LoginPartial" /></div>
-    </nav>*@
     <div class="m-2">
         @RenderBody()
         @await RenderSectionAsync("Scripts", required: false)

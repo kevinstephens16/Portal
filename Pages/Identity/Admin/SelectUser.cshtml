@@ -3,8 +3,16 @@
 @{  
     ViewBag.Workflow = Model.Callback ?? Model.Label ?? "List";
 }
-
-<form method="post" class="my-2">
+<link rel="stylesheet" href="~/css/DataTables/css/jquery.dataTables.min.css" >
+<script type="text/javascript" src="~/scripts/DataTables/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            order: [[0, 'asc']],
+        });
+    });
+</script>
+@*<form method="post" class="my-2">
     <div class="form-row">
         <div class="col">
             <div class="input-group">
@@ -15,9 +23,9 @@
             <button class="btn btn-secondary">Filter</button>
         </div>        
     </div>
-</form>
+</form>*@
 
-<table class="table table-sm table-striped table-bordered">
+<table class="table table-sm table-striped table-bordered" id="datatable">
     <thead>
         <tr>
             <th>User</th>

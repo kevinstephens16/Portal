@@ -4,9 +4,26 @@
     ViewBag.Workflow = "Roles";
 }
 
+<link rel="stylesheet" href="~/css/DataTables/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="~/scripts/DataTables/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable1').DataTable({
+            order: [[0, 'asc']],
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable2').DataTable({
+            order: [[0, 'asc']],
+        });
+    });
+</script>
 <div asp-validation-summary="All" class="text-danger m-2"></div>
 
-<table class="table table-sm table-striped table-bordered">
+<table class="table table-sm table-striped table-bordered" id="datatable1">
     <thead><tr><th colspan="2" class="text-center">Master Role List</th></tr></thead>
     <tbody>
         @foreach (IdentityRole role in Model.RoleManager.Roles) {
@@ -45,7 +62,7 @@
 </table>
 
 
-<table class="table table-sm table-striped table-bordered">
+<table class="table table-sm table-striped table-bordered" id="datatable2">
     <thead><tr><th colspan="2" class="text-center">User's Roles</th></tr></thead>
     <tbody>
         @if (Model.RoleManager.Roles.Count() == 0) {
