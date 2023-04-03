@@ -19,34 +19,32 @@
         <h3>MVC View Store Signed In Users</h3>
     </div>
     <div class="box-body">
-        <div class="box-body">
-            <div class="row form-group">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <table class="table table-sm table-striped table-bordered" id="datatable">
-                        <thead>
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table class="table table-sm table-striped table-bordered" id="datatable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th class="text-right">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Product p in Model.OrderBy(p => p.Id))
+                        {
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th class="text-right">Price</th>
+                                <td>@p.Id</td>
+                                <td>@p.Name</td>
+                                <td>@p.Category</td>
+                                <td class="text-right">$@p.Price.ToString("F2")</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (Product p in Model.OrderBy(p => p.Id))
-                            {
-                                <tr>
-                                    <td>@p.Id</td>
-                                    <td>@p.Name</td>
-                                    <td>@p.Category</td>
-                                    <td class="text-right">$@p.Price.ToString("F2")</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="box-footer text-center">
-        </div>
+    </div>
+    <div class="box-footer text-center">
     </div>
 </div>

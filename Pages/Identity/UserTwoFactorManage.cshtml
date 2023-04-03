@@ -5,26 +5,42 @@
     Layout = "_CustomLayout";
 }
 
-<div asp-validation-summary="All" class="text-danger m-2"></div>
+<div class="box box-widget">
+    <div class="box-header with-border text-center bg-black text-white">
+        <h3>Two Factor</h3>
+    </div>
+    <div class="box-body">
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                @if (await Model.IsTwoFactorEnabled())
+                {
+                    <div class="text-center">
+                        <div class="h6 m-2">Your account is configured to use an authenticator</div>
+                        <div>
+                            <form method="post">
+                                <button type="submit" class="btn btn-primary m-1"
+                                    asp-page-handler="GenerateCodes">
+                                    Generate New Recovery Codes
+                                </button>
+                                <button type="submit" class="btn btn-warning m-1"
+                                    asp-page-handler="Disable">
+                                    Disable Authenticator and Sign Out
+                                </button>
+                            </form>
+                        </div>
+                    </div>
 
-@if (await Model.IsTwoFactorEnabled()) {
-    <div class="text-center">
-        <div class="h6 m-2">Your account is configured to use an authenticator</div>
-        <div>
-            <form method="post">
-                <button type="submit" class="btn btn-primary m-1" 
-                        asp-page-handler="GenerateCodes">
-                    Generate New Recovery Codes
-                </button>
-                <button type="submit" class="btn btn-warning m-1" 
-                        asp-page-handler="Disable">
-                    Disable Authenticator and Sign Out
-                </button>
-            </form>
+                }
+                else
+                {
+                    <h6>Your account is not configured to use an authenticator.</h6>
+                    <a asp-page="UserTwoFactorSetup" class="btn btn-primary">Enable Authenticator</a>
+                }
+            </div>
         </div>
     </div>
-    
-} else {
-    <h6>Your account is not configured to use an authenticator.</h6>
-    <a asp-page="UserTwoFactorSetup" class="btn btn-primary">Enable Authenticator</a>
-}
+    <div class="box-footer text-center">
+        <div asp-validation-summary="All" class="text-danger m-2"></div>
+
+    </div>
+</div>

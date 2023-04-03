@@ -1,16 +1,29 @@
 ﻿@page
 @model Portal.Pages.ClearanceModel
 
-@{ 
-    Func<string, bool> HasClearance = (string level) 
+@{
+    Func<string, bool> HasClearance = (string level)
         => User.HasClaim(ApplicationClaimTypes.SecurityClearance, level);
 }
 
-<table class="table table-sm table-striped table-bordered">
-    <thead><tr><th>Clearance Level</th><th>Granted</th></tr></thead>
-    <tbody>
-        <tr><td>Secret</td><td>@HasClearance("Secret")</td></tr>
-        <tr><td>Very Secret</td><td>@HasClearance("VerySecret")</td></tr>
-        <tr><td>Super Secret</td><td>@HasClearance("SuperSecret")</td></tr>
-    </tbody>
-</table>
+<div class="box box-widget">
+    <div class="box-header with-border text-center bg-black text-white">
+        <h3>Clearance</h3>
+    </div>
+    <div class="box-body">
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table class="table table-sm table-striped table-bordered">
+                    <thead><tr><th>Clearance Level</th><th>Granted</th></tr></thead>
+                    <tbody>
+                        <tr><td>Secret</td><td>@HasClearance("Secret")</td></tr>
+                        <tr><td>Very Secret</td><td>@HasClearance("VerySecret")</td></tr>
+                        <tr><td>Super Secret</td><td>@HasClearance("SuperSecret")</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+</div>

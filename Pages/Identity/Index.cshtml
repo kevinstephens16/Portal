@@ -6,9 +6,22 @@
 
 }
 
-<table class="table table-sm table-striped table-bordered">
-    <tbody>
-        <tr><th>Email</th><td>@Model.Email</td></tr>
-        <tr><th>Phone</th><td>@Model.Phone</td></tr>    
-    </tbody>
-</table>
+<div class="box box-widget">
+    <div class="box-header with-border text-center bg-black text-white">
+        <h3>Overview</h3>
+    </div>
+    <div class="box-body">
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table class="table table-sm table-striped table-bordered">
+                    <tbody>
+                        <tr><th>Email</th><td>@Model.Email</td></tr>
+                        <tr><th>Phone</th><td>@Model.Phone</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+</div>

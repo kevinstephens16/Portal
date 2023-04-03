@@ -9,6 +9,14 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\ApplicationDbContext.cs" />
+    <Compile Remove="Pages\Identity\SignIn.cshtml.cs" />
+    <Compile Remove="Pages\Identity\SignOut.cshtml.cs" />
+    <Compile Remove="Pages\Identity\SignUp.cshtml.cs" />
+    <Compile Remove="Pages\Identity\SignUpConfirm.cshtml.cs" />
+    <Compile Remove="Pages\Identity\SignUpExternal.cshtml.cs" />
+    <Compile Remove="Pages\Identity\SignUpResend.cshtml.cs" />
+    <Compile Remove="Pages\Identity\UserAccountCompleteExternal.cshtml.cs" />
+    <Compile Remove="Pages\Identity\UserDelete.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +25,14 @@
     <Content Remove="bundleconfig.json" />
     <Content Remove="Pages\Identity\Admin\_Admin1Layout.cshtml" />
     <Content Remove="Pages\Identity\Admin\_AdminSidebar.cshtml" />
+    <Content Remove="Pages\Identity\SignIn.cshtml" />
+    <Content Remove="Pages\Identity\SignOut.cshtml" />
+    <Content Remove="Pages\Identity\SignUp.cshtml" />
+    <Content Remove="Pages\Identity\SignUpConfirm.cshtml" />
+    <Content Remove="Pages\Identity\SignUpExternal.cshtml" />
+    <Content Remove="Pages\Identity\SignUpResend.cshtml" />
+    <Content Remove="Pages\Identity\UserAccountCompleteExternal.cshtml" />
+    <Content Remove="Pages\Identity\UserDelete.cshtml" />
     <Content Remove="Views\Shared\_ExternalButtonPartial.cshtml" />
     <Content Remove="Views\Shared\_InfoLayout.cshtml" />
     <Content Remove="Views\Shared\_LoginPartial.cshtml" />

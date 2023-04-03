@@ -6,16 +6,31 @@
     ViewBag.Workflow = "Features";
 }
 
-<table class="table table-sm table-striped table-bordered">
-    <thead><tr><th>Property</th><th>Supported</th></tr></thead>
-    <tbody>
-        @foreach ((string prop, string val) in Model.Features) {
-            <tr>
-                <td>@prop</td>
-                <td class="@(val == "True" ? "bg-success" : "bg-danger") text-white">
-                    @val
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="box box-widget">
+    <div class="box-header with-border text-center bg-black text-white">
+        <h3>Features</h3>
+    </div>
+    <div class="box-body">
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table class="table table-sm table-striped table-bordered">
+                    <thead><tr><th>Property</th><th>Supported</th></tr></thead>
+                    <tbody>
+                        @foreach ((string prop, string val) in Model.Features)
+                        {
+                            <tr>
+                                <td>@prop</td>
+                                <td class="@(val == "True" ? "bg-success" : "bg-danger") text-white">
+                                    @val
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer text-center">
+
+    </div>
+</div>

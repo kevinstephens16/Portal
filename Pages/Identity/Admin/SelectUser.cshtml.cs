@@ -19,7 +19,7 @@ namespace Portal.Pages.Identity.Admin {
         [BindProperty(SupportsGet = true)]
         public string Callback { get; set; }
 
-        [BindProperty(SupportsGet = true)]
+        [BindProperty(SupportsGet = false)]
         public string Filter { get; set; }
 
         public void OnGet() {

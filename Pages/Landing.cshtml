@@ -1,10 +1,19 @@
 ﻿@page "/pages"
 @model Portal.Pages.LandingModel
 
-<h4 class="bg-info text-white text-center p-2">Pages - Level 1 - Anyone</h4>
-
-<div class="text-center">
-    <h6 class="p-2">
-        The store contains @Model.DbContext.Products.Count() products. 
-    </h6>
+<div class="box box-widget">
+    <div class="box-header with-border text-center bg-black text-white">
+        <h3>Pages - Level 1 - Anyone</h3>
+    </div>
+    <div class="box-body">
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <h6 class="p-2">
+                    The store contains @Model.DbContext.Products.Count() products.
+                </h6>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer text-center">
+    </div>
 </div>
