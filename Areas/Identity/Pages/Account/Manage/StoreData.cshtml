@@ -5,6 +5,7 @@
     ViewData["ActivePage"] = ManageNavPages.StoreData;
     ViewData["ParentLayout"] = "_InfoLayout";
     IdentityUser user = await UserManager.GetUserAsync(User);
+    ViewData["Title"] = "Store Data";
 }
 
 <div class="box box-widget">

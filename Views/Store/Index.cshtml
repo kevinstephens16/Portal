@@ -1,9 +1,8 @@
 ﻿@model IQueryable<Product>
 @{
     Layout = "_CustomLayout";
-    ViewData["Title"] = "Store";
 }
-<link rel="stylesheet" href="~/css/site.css">
+<title>Store</title>
 <link rel="stylesheet" href="~/css/DataTables/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="~/scripts/DataTables/jquery.dataTables.js"></script>
 <script type="text/javascript">
@@ -19,32 +18,35 @@
         <h3>MVC View Store Signed In Users</h3>
     </div>
     <div class="box-body">
-        <div class="row form-group">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <table class="table table-sm table-striped table-bordered" id="datatable">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th class="text-right">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (Product p in Model.OrderBy(p => p.Id))
-                        {
+        <div class="box-body">
+            <div class="row form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table class="table table-sm table-striped table-bordered" id="datatable">
+                        <thead>
                             <tr>
-                                <td>@p.Id</td>
-                                <td>@p.Name</td>
-                                <td>@p.Category</td>
-                                <td class="text-right">$@p.Price.ToString("F2")</td>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th class="text-right">Price</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (Product p in Model.OrderBy(p => p.Id))
+                            {
+                                <tr>
+                                    <td>@p.Id</td>
+                                    <td>@p.Name</td>
+                                    <td>@p.Category</td>
+                                    <td class="text-right">$@p.Price.ToString("F2")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <div class="box-footer text-center">
+        </div>
     </div>
-    <div class="box-footer text-center">
-    </div>
+</div>
 </div>
