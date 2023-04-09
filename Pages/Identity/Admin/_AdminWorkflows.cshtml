@@ -20,6 +20,14 @@
 
 <aside class="main-sidebar">
     <section class="sidebar">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#" class="text-white"><i class="fa fa-user text-white"></i> @User.Identity.Name</a>
+                </li>
+            </ul>
+        }
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
             <li title="Main"><a href="~/Home/Index"><i class="fa fa-home"></i> <span>Home</span></a></li>
@@ -41,7 +49,7 @@
                       asp-route-returnUrl="@Url.Page("/", new { area = "" })"
                           method="post">
                         <button type="submit" class="btn btn-link text-white">
-                            <i class="fa fa-power-off"></i><span> Logout</span>
+                            <i class="fa fa-lock"></i><span> Logout</span>
                         </button>
                     </form>
                 </li>

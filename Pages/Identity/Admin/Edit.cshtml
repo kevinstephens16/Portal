@@ -6,75 +6,41 @@
 }
 
 <div class="box box-widget">
-    <div class="box-header with-border text-center bg-black text-white">
+    <div class="box-header with-border text-center rowcolor">
         <h3>Edit Account</h3>
     </div>
     <div class="box-body">
         <div class="row form-group">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 text-center">
                 <form method="post">
                     <input type="hidden" asp-for="Id" />
                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <label>Username</label>
-                            <input class="form-control" asp-for="IdentityUser.UserName" readonly />
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
+                        <label>Username</label>
+                        <input class="form-control" asp-for="IdentityUser.UserName" readonly />
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <label>Normalized Username</label>
-                            <input class="form-control" asp-for="IdentityUser.NormalizedUserName"
-                                   readonly />
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
+                        <label>Normalized Username</label>
+                        <input class="form-control" asp-for="IdentityUser.NormalizedUserName"
+                               readonly />
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <label>Email</label>
-                            <input class="form-control" asp-for="IdentityUser.Email" />
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
+                        <label>Email</label>
+                        <input class="form-control" asp-for="IdentityUser.Email" />
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <label>Normalized Email</label>
-                            <input class="form-control"
-                                   asp-for="IdentityUser.NormalizedEmail" readonly />
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
+                        <label>Normalized Email</label>
+                        <input class="form-control"
+                               asp-for="IdentityUser.NormalizedEmail" readonly />
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <label>Phone Number</label>
-                            <input class="form-control" asp-for="IdentityUser.PhoneNumber" />
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
+                        <label>Phone Number</label>
+                        <input class="form-control" asp-for="IdentityUser.PhoneNumber" />
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                            <button type="submit" class="btn btn-success">Save</button>
-                            <a asp-page="Dashboard" class="btn btn-secondary">Cancel</a>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        </div>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <a asp-page="Dashboard" class="btn btn-secondary">Cancel</a>
                     </div>
                 </form>
             </div>

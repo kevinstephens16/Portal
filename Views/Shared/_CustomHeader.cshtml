@@ -16,10 +16,9 @@
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <span class="hidden-xs text-white"><i class="fa fa-user"></i> @User.Identity.Name</span>
-                }
+                <li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                </li>
 
             </ul>
         </div>

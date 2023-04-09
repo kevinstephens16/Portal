@@ -46,7 +46,7 @@ namespace Portal.Controllers
         }
 
         [HttpDelete("{id}")]
-        public Task DeleteProduct(long id)
+        public Task DeleteProduct(int id)
         {
             DbContext.Products.Remove(new Product { Id = id });
             return DbContext.SaveChangesAsync();

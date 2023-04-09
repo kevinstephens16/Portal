@@ -8,6 +8,14 @@
 }
 <aside class="main-sidebar">
     <section class="sidebar">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#" class="text-white"><i class="fa fa-user text-white"></i> @User.Identity.Name</a>
+                </li>
+            </ul>
+        }
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
             <li title="Main"><a href="~/Home/Index"><i class="fa fa-home"></i> <span>Main</span></a></li>
@@ -31,6 +39,18 @@
                     <li title="Recovery Codes"><a href="~/Identity/UserRecoveryCodes"><i class="fa fa-link"></i> <span>Recovery Codes</span></a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-folder"></i> <span>Product</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li title="Edit"><a href="~/Admin/index"><i class="fa fa-pencil"></i> <span>Edit</span></a></li>
+                    <li title="Product"><a href="~/Store/Index"><i class="fa fa-file"></i> <span>Product</span></a></li>
+                </ul>
+            </li>
             @if (SignInManager.IsSignedIn(User))
             {
                 <li class="nav-item">
@@ -38,7 +58,7 @@
                       asp-route-returnUrl="@Url.Page("/", new { area = "" })"
                           method="post">
                         <button type="submit" class="btn btn-link text-white">
-                            <i class="fa fa-power-off"></i><span> Logout</span>
+                            <i class="fa fa-lock"></i><span> Logout</span>
                         </button>
                     </form>
                 </li>

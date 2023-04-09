@@ -18,9 +18,6 @@
   background: rgba(0, 0, 0, 0.1);
   color: #f6f6f6;
 }
-.skin-default .main-header .navbar .sidebar-toggle {
-  color: #ffffff;
-}
 .skin-default .main-header .navbar .sidebar-toggle:hover {
   color: #f6f6f6;
   background: rgba(0, 0, 0, 0.1);
@@ -51,7 +48,7 @@
   background-color: #fff;
 }
 .skin-default .main-header li.user-header {
-  background-color: 1a2226;
+  background-color: #1a2226;
 }
 .skin-default .content-header {
   background: transparent;
@@ -131,4 +128,18 @@
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 0;
+}
+.skin-default .control-sidebar-color {
+    background-color: #1a2226 !important;
+    color: #fff;
+}
+.skin-default .rowcolor {
+    background-color: #1a2226 !important;
+    font-weight: bold;
+    color: White;
+    font-family: 'Microsoft Sans Serif', san-serif, 'Arial, Helvetica';
+    text-decoration: none;
+    font-size: 12pt;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }

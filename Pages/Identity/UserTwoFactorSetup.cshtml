@@ -7,7 +7,7 @@
 }
 
 <div class="box box-widget">
-    <div class="box-header with-border text-center bg-black text-white">
+    <div class="box-header with-border text-center rowcolor">
         <h3>Two Factor</h3>
     </div>
     <div class="box-body">
@@ -33,9 +33,13 @@
                                     <h6>Step 2:</h6>
                                     Enter the code shown by your authenticator into the
                                     text field and click the Confirm button
-                                    <input name="confirm" placeholder="Enter code"
-                                           class="form-control my-2" />
-                                    <button class="btn btn-primary" type="submit">Confirm</button>
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-3 col-xs-3">
+                                            <input name="confirm" placeholder="Enter code"
+                                                   class="form-control my-2" />
+                                            <button class="btn btn-primary" type="submit">Confirm</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>

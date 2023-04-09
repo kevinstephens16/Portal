@@ -1,6 +1,7 @@
 ﻿@model IQueryable<Product>
 
 @{
+    Layout = "_CustomLayout";
     ViewData["Title"] = "Admin";
 }
 <link rel="stylesheet" href="~/css/site.css">
@@ -15,7 +16,7 @@
 </script>
 
 <div class="box box-widget">
-    <div class="box-header with-border text-center bg-black text-white">
+    <div class="box-header with-border text-center rowcolor">
         <h3>MVC Level 3 - Administrators</h3>
     </div>
     <div class="box-body">
@@ -56,9 +57,9 @@
             </div>
         </div>
         <div class="row form-group">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <a class="btn btn-primary" asp-action="Create">Create</a>
             </div>
-            <a class="btn btn-primary mx-2" asp-action="Create">Create</a>
         </div>
     </div>
     <div class="box-footer text-center">

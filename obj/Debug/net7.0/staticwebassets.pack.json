@@ -645,112 +645,32 @@
       "PackagePath": "staticwebassets\\css\\css\\icheck\\yellow.min.css"
     },
     {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\_all-skins.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\_all-skins.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\_all-skins.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\_all-skins.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-black-light.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-black-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-black-light.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-black-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-black.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-black.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-black.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-black.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-blue-light.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-blue-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-blue-light.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-blue-light.min.css"
-    },
-    {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-blue.css",
       "PackagePath": "staticwebassets\\css\\css\\skins\\skin-blue.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-blue.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-blue.min.css"
     },
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-default.css",
       "PackagePath": "staticwebassets\\css\\css\\skins\\skin-default.css"
     },
     {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-green-light.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-green-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-green-light.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-green-light.min.css"
-    },
-    {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-green.css",
       "PackagePath": "staticwebassets\\css\\css\\skins\\skin-green.css"
     },
     {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-green.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-green.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-purple-light.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-purple-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-purple-light.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-purple-light.min.css"
+      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-pink.css",
+      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-pink.css"
     },
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-purple.css",
       "PackagePath": "staticwebassets\\css\\css\\skins\\skin-purple.css"
     },
     {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-purple.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-purple.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-red-light.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-red-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-red-light.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-red-light.min.css"
-    },
-    {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-red.css",
       "PackagePath": "staticwebassets\\css\\css\\skins\\skin-red.css"
     },
     {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-red.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-red.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-yellow-light.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-yellow-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-yellow-light.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-yellow-light.min.css"
-    },
-    {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-yellow.css",
       "PackagePath": "staticwebassets\\css\\css\\skins\\skin-yellow.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\css\\skins\\skin-yellow.min.css",
-      "PackagePath": "staticwebassets\\css\\css\\skins\\skin-yellow.min.css"
     },
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\dx.common.css",
@@ -1191,114 +1111,6 @@
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\_all-skins.css",
-      "PackagePath": "staticwebassets\\css\\skins\\_all-skins.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\_all-skins.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\_all-skins.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-black-light.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-black-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-black-light.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-black-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-black.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-black.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-black.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-black.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-blue-light.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-blue-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-blue-light.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-blue-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-blue.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-blue.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-blue.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-blue.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-default.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-default.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-green-light.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-green-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-green-light.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-green-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-green.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-green.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-green.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-green.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-purple-light.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-purple-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-purple-light.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-purple-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-purple.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-purple.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-purple.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-purple.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-red-light.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-red-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-red-light.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-red-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-red.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-red.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-red.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-red.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-yellow-light.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-yellow-light.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-yellow-light.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-yellow-light.min.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-yellow.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-yellow.css"
-    },
-    {
-      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\skins\\skin-yellow.min.css",
-      "PackagePath": "staticwebassets\\css\\skins\\skin-yellow.min.css"
     },
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\css\\summernote.css",
@@ -1755,6 +1567,22 @@
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map"
     },
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
@@ -3591,6 +3419,10 @@
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\scripts\\jquery-ui-1.11.4.js",
       "PackagePath": "staticwebassets\\scripts\\jquery-ui-1.11.4.js"
+    },
+    {
+      "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\scripts\\jquery.cookie.js",
+      "PackagePath": "staticwebassets\\scripts\\jquery.cookie.js"
     },
     {
       "Id": "C:\\Users\\Steph\\Source\\Repos\\Portal\\wwwroot\\scripts\\jquery.jeditable.js",

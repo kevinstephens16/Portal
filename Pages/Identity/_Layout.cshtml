@@ -1,15 +1,21 @@
-﻿@{ 
-    string theme = ViewData["theme"] as string ?? "primary";
+﻿@{
+    //string theme = ViewData["theme"] as string ?? "primary";
     bool showNav = ViewData["showNav"] as bool? ?? true;
     string navPartial = ViewData["navPartial"] as string ?? "_Workflows";
     string workflow = ViewData["workflow"] as string;
-    string banner =  ViewData["banner"] as string ?? "User Dashboard";
+    string banner = ViewData["banner"] as string ?? "User Dashboard";
     bool showHeader = ViewData["showHeader"] as bool? ?? true;
+
+    //var hideNav = (string)Context.Request.Query["hideNav"] == "1";
+    var hideNav = ViewData["showNav"] as bool? ?? true;
+    var themeCookie = Context.Request.Cookies["ThemePreference"];
+    var theme = themeCookie != null && !string.IsNullOrEmpty(themeCookie) ? themeCookie : "default";
+    var rtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
 }
 
 
 <!DOCTYPE html>
-<html>
+<html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name" class="no-js@(hideNav ? " no-navigation" : "")">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +27,7 @@
     <bundle name="wwwroot/bundles/site.min.js" />
 
 </head>
-<body class="hold-transition skin-default sidebar-mini">
+<body id="s-@(ViewData["PageId"])Page" class="@(ViewData["BodyClass"]) fixed sidebar-mini hold-transition skin-@theme@(hideNav ? " no-navigation" : " has-layout-event")@(rtl ? " rtl" : "")">
     <script type="text/javascript">
         /* Recover sidebar state */
         (function () {
@@ -35,9 +41,9 @@
         <partial name="_AdminHeader" />
         @if (showNav)
         {
-                        <div class="col-auto">
-                            <partial name="@navPartial" model="@((workflow, theme))" />
-                        </div>
+            <div class="col-auto">
+                <partial name="@navPartial" model="@((workflow, theme))" />
+            </div>
         }
 
         <div class="content-wrapper">
@@ -54,6 +60,63 @@
             </footer>
         </div>
     </div>
+    <aside class="control-sidebar control-sidebar-color">
+        <div class="tab-content">
+            <div class="tab-pane active" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label class="control-sidebar-subheading">Theme</label>
+                        <select id="ThemeSelect" class="form-control">
+                            <option value="">Select</option>
+                            <option value="blue">Blue</option>
+                            <option value="default">Default</option>
+                            <option value="green">Green</option>
+                            <option value="pink">Pink</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                            <option value="yellow">Yellow</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+
+    <div class="control-sidebar-bg"></div>
+    @RenderSection("Scripts", false)
+
+    <script type="text/javascript">
+        $('#ThemeSelect').on('change', function () {
+            $.cookie('ThemePreference', $("#ThemeSelect :selected").attr('value'), {
+                path: "/",
+                expires: 365
+            });
+
+            $('body').addClass('skin-' + $("#ThemeSelect :selected").attr('value'));
+            console.log($("#ThemeSelect :selected").attr('value'));
+
+        @RenderSection("PageInitScript", false)
+
+                            var doLayout = function () {
+                height = (this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height;
+                height -= $('header.main-header').outerHeight() || 0;
+                height -= $('section.content-header').outerHeight() || 0;
+                height -= $('footer.main-footer').outerHeight() || 0;
+                if (height < 200) height = 200;
+                $("section.content").css("min-height", (height) + "px");
+
+                $('body').triggerHandler('layout');
+                $('aside').triggerHandler('layout');
+            };
+
+            $(window).bind("load resize layout", doLayout);
+            doLayout();
+            location.reload();
+        });
+
+    </script>
     <script type="text/javascript">
         (function ($) {
             /* Store sidebar state */
@@ -67,7 +130,6 @@
             });
         })(jQuery);
     </script>
-    @RenderSection("Scripts", false)
 </body>
 </html>
 

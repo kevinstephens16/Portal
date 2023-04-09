@@ -290,3 +290,4 @@ C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.AspNetCore.Authent
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\log4net.config
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\log4net.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.AspNetCore.Owin.dll

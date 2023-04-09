@@ -26,10 +26,14 @@
   {
     "outputFileName": "wwwroot/bundles/site.min.css",
     "inputFiles": [
-      "wwwroot/css/skins/skin-blue.css",
-      "wwwroot/css/skins/skin-green.css",
-      "wwwroot/css/skins/skin-blue.css",
-      "wwwroot/css/skins/skin-default.css",
+      "wwwroot/css/css/skins/skin-blue.css",
+      "wwwroot/css/css/skins/skin-green.css",
+      "wwwroot/css/css/skins/skin-blue.css",
+      "wwwroot/css/css/skins/skin-default.css",
+      "wwwroot/css/css/skins/skin-pink.css",
+      "wwwroot/css/css/skins/skin-purple.css",
+      "wwwroot/css/css/skins/skin-red.css",
+      "wwwroot/css/css/skins/skin-yellow.css",
       "wwwroot/css/AdminLTE.css",
       "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "wwwroot/lib/font-awesome/css/all.css",
@@ -43,6 +47,7 @@
       "wwwroot/scripts/jquery-3.6.3.min.js",
       "wwwroot/css/js/adminlte.js",
       "wwwroot/js/site.js",
+      "wwwroot/scripts/jquery.cookie.js",
       "wwwroot/lib/font-awesome/js/all.min.js"
     ],
     "minify": {
