@@ -2,6 +2,25 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "AspNetCore.Unobtrusive.Ajax/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/AspNetCore.Unobtrusive.Ajax.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AspNetCore.Unobtrusive.Ajax.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -81,6 +100,34 @@
       "Chart.js/3.7.1": {
         "type": "package"
       },
+      "cldrjs/0.4.4": {
+        "type": "package"
+      },
+      "DevExtreme.AspNet.Data/2.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DevExtreme.Web/22.2.6": {
+        "type": "package",
+        "dependencies": {
+          "JSZip": "3.1.2",
+          "jQuery": "3.5.1",
+          "jquery-globalize": "1.1.1"
+        }
+      },
       "glyphicon/1.0.1": {
         "type": "package"
       },
@@ -96,6 +143,18 @@
             "related": ".xml"
           }
         }
+      },
+      "jQuery/3.5.1": {
+        "type": "package"
+      },
+      "jquery-globalize/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "cldrjs": "0.4.4"
+        }
+      },
+      "JSZip/3.1.2": {
+        "type": "package"
       },
       "log4net/2.0.13": {
         "type": "package",
@@ -2067,15 +2126,15 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -3988,6 +4047,30 @@
     }
   },
   "libraries": {
+    "AspNetCore.Unobtrusive.Ajax/2.0.0": {
+      "sha512": "hFzcqL7PWw1shrtFlm/2vUlToGruTXSijq60M4FI+0C5KKI+q2oRk0InPcO8jyuC9/nEtsLX20D1sDwhLNFeNw==",
+      "type": "package",
+      "path": "aspnetcore.unobtrusive.ajax/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.unobtrusive.ajax.2.0.0.nupkg.sha512",
+        "aspnetcore.unobtrusive.ajax.nuspec",
+        "icon.png",
+        "lib/net5.0/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/net5.0/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/net6.0/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/net6.0/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp2.1/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp2.1/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp2.2/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp2.2/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp3.0/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp3.0/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.xml"
+      ]
+    },
     "Azure.Core/1.24.0": {
       "sha512": "+/qI1j2oU1S4/nvxb2k/wDsol00iGf1AyJX5g3epV7eOpQEP/2xcgh/cxgKMeFgn3U2fmgSiBnQZdkV+l5y0Uw==",
       "type": "package",
@@ -4075,6 +4158,216 @@
         "content/Scripts/chart.min.js"
       ]
     },
+    "cldrjs/0.4.4": {
+      "sha512": "QTJ2r9FpA1XOFPRguhHAFjJZZJVil5TFOUCTLpN02BjQtgXgVDpt5VFyxQp/uNwEh0InNWLdIugl2Ls1IBqfXg==",
+      "type": "package",
+      "path": "cldrjs/0.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cldrjs.0.4.4.nupkg.sha512",
+        "cldrjs.nuspec",
+        "content/Scripts/cldr.js",
+        "content/Scripts/cldr/event.js",
+        "content/Scripts/cldr/supplemental.js",
+        "content/Scripts/cldr/unresolved.js"
+      ]
+    },
+    "DevExtreme.AspNet.Data/2.9.2": {
+      "sha512": "ixXp6GrbjlJKjkFRgy3nBkZrjgCb964fSDHR3HZ3u66ybQFq1d7lBZskvJn44Fhd+ropKmPfzERK+spA91Mj1g==",
+      "type": "package",
+      "path": "devextreme.aspnet.data/2.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "devextreme.aspnet.data.2.9.2.nupkg.sha512",
+        "devextreme.aspnet.data.nuspec",
+        "lib/net452/DevExtreme.AspNet.Data.dll",
+        "lib/net452/DevExtreme.AspNet.Data.xml",
+        "lib/netstandard2.0/DevExtreme.AspNet.Data.dll",
+        "lib/netstandard2.0/DevExtreme.AspNet.Data.xml"
+      ]
+    },
+    "DevExtreme.Web/22.2.6": {
+      "sha512": "nHJ2GHNpz43RIUr4W/jIG6VHir6a+VRTXWpPTNgsjDNLXxRwxtowczTfDyuqhrUQdLMqJ/stsVRJKCTjFwu+Qw==",
+      "type": "package",
+      "path": "devextreme.web/22.2.6",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "content/net/Content/dx-diagram.css",
+        "content/net/Content/dx-diagram.min.css",
+        "content/net/Content/dx-gantt.css",
+        "content/net/Content/dx-gantt.min.css",
+        "content/net/Content/dx.carmine.compact.css",
+        "content/net/Content/dx.carmine.css",
+        "content/net/Content/dx.common.css",
+        "content/net/Content/dx.contrast.compact.css",
+        "content/net/Content/dx.contrast.css",
+        "content/net/Content/dx.dark.compact.css",
+        "content/net/Content/dx.dark.css",
+        "content/net/Content/dx.darkmoon.compact.css",
+        "content/net/Content/dx.darkmoon.css",
+        "content/net/Content/dx.darkviolet.compact.css",
+        "content/net/Content/dx.darkviolet.css",
+        "content/net/Content/dx.greenmist.compact.css",
+        "content/net/Content/dx.greenmist.css",
+        "content/net/Content/dx.light.compact.css",
+        "content/net/Content/dx.light.css",
+        "content/net/Content/dx.material.blue.dark.compact.css",
+        "content/net/Content/dx.material.blue.dark.css",
+        "content/net/Content/dx.material.blue.light.compact.css",
+        "content/net/Content/dx.material.blue.light.css",
+        "content/net/Content/dx.material.lime.dark.compact.css",
+        "content/net/Content/dx.material.lime.dark.css",
+        "content/net/Content/dx.material.lime.light.compact.css",
+        "content/net/Content/dx.material.lime.light.css",
+        "content/net/Content/dx.material.orange.dark.compact.css",
+        "content/net/Content/dx.material.orange.dark.css",
+        "content/net/Content/dx.material.orange.light.compact.css",
+        "content/net/Content/dx.material.orange.light.css",
+        "content/net/Content/dx.material.purple.dark.compact.css",
+        "content/net/Content/dx.material.purple.dark.css",
+        "content/net/Content/dx.material.purple.light.compact.css",
+        "content/net/Content/dx.material.purple.light.css",
+        "content/net/Content/dx.material.teal.dark.compact.css",
+        "content/net/Content/dx.material.teal.dark.css",
+        "content/net/Content/dx.material.teal.light.compact.css",
+        "content/net/Content/dx.material.teal.light.css",
+        "content/net/Content/dx.softblue.compact.css",
+        "content/net/Content/dx.softblue.css",
+        "content/net/Content/fonts/Roboto-300.ttf",
+        "content/net/Content/fonts/Roboto-300.woff",
+        "content/net/Content/fonts/Roboto-300.woff2",
+        "content/net/Content/fonts/Roboto-400.ttf",
+        "content/net/Content/fonts/Roboto-400.woff",
+        "content/net/Content/fonts/Roboto-400.woff2",
+        "content/net/Content/fonts/Roboto-500.ttf",
+        "content/net/Content/fonts/Roboto-500.woff",
+        "content/net/Content/fonts/Roboto-500.woff2",
+        "content/net/Content/fonts/Roboto-700.ttf",
+        "content/net/Content/fonts/Roboto-700.woff",
+        "content/net/Content/fonts/Roboto-700.woff2",
+        "content/net/Content/icons/dxicons.ttf",
+        "content/net/Content/icons/dxicons.woff",
+        "content/net/Content/icons/dxicons.woff2",
+        "content/net/Content/icons/dxiconsmaterial.ttf",
+        "content/net/Content/icons/dxiconsmaterial.woff",
+        "content/net/Content/icons/dxiconsmaterial.woff2",
+        "content/net/Scripts/devextreme-localization/dx.messages.de.js",
+        "content/net/Scripts/devextreme-localization/dx.messages.en.js",
+        "content/net/Scripts/devextreme-localization/dx.messages.ja.js",
+        "content/net/Scripts/devextreme-localization/dx.messages.ru.js",
+        "content/net/Scripts/dx-diagram.js",
+        "content/net/Scripts/dx-diagram.min.js",
+        "content/net/Scripts/dx-gantt.js",
+        "content/net/Scripts/dx-gantt.min.js",
+        "content/net/Scripts/dx.all.debug.js",
+        "content/net/Scripts/dx.all.js",
+        "content/net/Scripts/dx.aspnet.mvc.js",
+        "content/net/Scripts/dx.viz.debug.js",
+        "content/net/Scripts/dx.viz.js",
+        "content/net/Scripts/dx.web.debug.js",
+        "content/net/Scripts/dx.web.js",
+        "content/net/Scripts/vectormap-data/africa.js",
+        "content/net/Scripts/vectormap-data/canada.js",
+        "content/net/Scripts/vectormap-data/eurasia.js",
+        "content/net/Scripts/vectormap-data/europe.js",
+        "content/net/Scripts/vectormap-data/usa.js",
+        "content/net/Scripts/vectormap-data/world.js",
+        "content/net/Scripts/vectormap-utils/dx.vectormaputils.debug.js",
+        "content/net/Scripts/vectormap-utils/dx.vectormaputils.js",
+        "content/net/Scripts/vectormap-utils/dx.vectormaputils.node.js",
+        "content/netcore/css/dx-diagram.css",
+        "content/netcore/css/dx-diagram.min.css",
+        "content/netcore/css/dx-gantt.css",
+        "content/netcore/css/dx-gantt.min.css",
+        "content/netcore/css/dx.carmine.compact.css",
+        "content/netcore/css/dx.carmine.css",
+        "content/netcore/css/dx.common.css",
+        "content/netcore/css/dx.contrast.compact.css",
+        "content/netcore/css/dx.contrast.css",
+        "content/netcore/css/dx.dark.compact.css",
+        "content/netcore/css/dx.dark.css",
+        "content/netcore/css/dx.darkmoon.compact.css",
+        "content/netcore/css/dx.darkmoon.css",
+        "content/netcore/css/dx.darkviolet.compact.css",
+        "content/netcore/css/dx.darkviolet.css",
+        "content/netcore/css/dx.greenmist.compact.css",
+        "content/netcore/css/dx.greenmist.css",
+        "content/netcore/css/dx.light.compact.css",
+        "content/netcore/css/dx.light.css",
+        "content/netcore/css/dx.material.blue.dark.compact.css",
+        "content/netcore/css/dx.material.blue.dark.css",
+        "content/netcore/css/dx.material.blue.light.compact.css",
+        "content/netcore/css/dx.material.blue.light.css",
+        "content/netcore/css/dx.material.lime.dark.compact.css",
+        "content/netcore/css/dx.material.lime.dark.css",
+        "content/netcore/css/dx.material.lime.light.compact.css",
+        "content/netcore/css/dx.material.lime.light.css",
+        "content/netcore/css/dx.material.orange.dark.compact.css",
+        "content/netcore/css/dx.material.orange.dark.css",
+        "content/netcore/css/dx.material.orange.light.compact.css",
+        "content/netcore/css/dx.material.orange.light.css",
+        "content/netcore/css/dx.material.purple.dark.compact.css",
+        "content/netcore/css/dx.material.purple.dark.css",
+        "content/netcore/css/dx.material.purple.light.compact.css",
+        "content/netcore/css/dx.material.purple.light.css",
+        "content/netcore/css/dx.material.teal.dark.compact.css",
+        "content/netcore/css/dx.material.teal.dark.css",
+        "content/netcore/css/dx.material.teal.light.compact.css",
+        "content/netcore/css/dx.material.teal.light.css",
+        "content/netcore/css/dx.softblue.compact.css",
+        "content/netcore/css/dx.softblue.css",
+        "content/netcore/css/fonts/Roboto-300.ttf",
+        "content/netcore/css/fonts/Roboto-300.woff",
+        "content/netcore/css/fonts/Roboto-300.woff2",
+        "content/netcore/css/fonts/Roboto-400.ttf",
+        "content/netcore/css/fonts/Roboto-400.woff",
+        "content/netcore/css/fonts/Roboto-400.woff2",
+        "content/netcore/css/fonts/Roboto-500.ttf",
+        "content/netcore/css/fonts/Roboto-500.woff",
+        "content/netcore/css/fonts/Roboto-500.woff2",
+        "content/netcore/css/fonts/Roboto-700.ttf",
+        "content/netcore/css/fonts/Roboto-700.woff",
+        "content/netcore/css/fonts/Roboto-700.woff2",
+        "content/netcore/css/icons/dxicons.ttf",
+        "content/netcore/css/icons/dxicons.woff",
+        "content/netcore/css/icons/dxicons.woff2",
+        "content/netcore/css/icons/dxiconsmaterial.ttf",
+        "content/netcore/css/icons/dxiconsmaterial.woff",
+        "content/netcore/css/icons/dxiconsmaterial.woff2",
+        "content/netcore/js/devextreme-localization/dx.messages.de.js",
+        "content/netcore/js/devextreme-localization/dx.messages.en.js",
+        "content/netcore/js/devextreme-localization/dx.messages.ja.js",
+        "content/netcore/js/devextreme-localization/dx.messages.ru.js",
+        "content/netcore/js/dx-diagram.js",
+        "content/netcore/js/dx-diagram.min.js",
+        "content/netcore/js/dx-gantt.js",
+        "content/netcore/js/dx-gantt.min.js",
+        "content/netcore/js/dx.all.debug.js",
+        "content/netcore/js/dx.all.js",
+        "content/netcore/js/dx.viz.debug.js",
+        "content/netcore/js/dx.viz.js",
+        "content/netcore/js/dx.web.debug.js",
+        "content/netcore/js/dx.web.js",
+        "content/netcore/js/vectormap-data/africa.js",
+        "content/netcore/js/vectormap-data/canada.js",
+        "content/netcore/js/vectormap-data/eurasia.js",
+        "content/netcore/js/vectormap-data/europe.js",
+        "content/netcore/js/vectormap-data/usa.js",
+        "content/netcore/js/vectormap-data/world.js",
+        "content/netcore/js/vectormap-utils/dx.vectormaputils.debug.js",
+        "content/netcore/js/vectormap-utils/dx.vectormaputils.js",
+        "content/netcore/js/vectormap-utils/dx.vectormaputils.node.js",
+        "devextreme.web.22.2.6.nupkg.sha512",
+        "devextreme.web.nuspec",
+        "jslogo.png",
+        "tools/install.ps1"
+      ]
+    },
     "glyphicon/1.0.1": {
       "sha512": "eysBKGjcKFb4mdk04ZlStZUuDjaaql2/XuCNhCJtQZaCmsV3+iT5ogACJUEOXrb7/hlirlcTwDpoJB8raWPaYw==",
       "type": "package",
@@ -4103,6 +4396,62 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "jQuery/3.5.1": {
+      "sha512": "ji6sm/AI0vjASXAA/AG9Yf5ypALAqIDXFFKPHMAnFL8kp3xqULIWhACjg/OXZP88C56frYlIej2nrdBnhTMYQQ==",
+      "type": "package",
+      "path": "jquery/3.5.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-3.5.1-vsdoc.js",
+        "Content/Scripts/jquery-3.5.1.js",
+        "Content/Scripts/jquery-3.5.1.min.js",
+        "Content/Scripts/jquery-3.5.1.min.map",
+        "Content/Scripts/jquery-3.5.1.slim.js",
+        "Content/Scripts/jquery-3.5.1.slim.min.js",
+        "Content/Scripts/jquery-3.5.1.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.5.1.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.3.5.1.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "jquery-globalize/1.1.1": {
+      "sha512": "tkRqYLIONjwamztg1rG+xyh2asA0ARLOPorfF3N9JW8fWr+srtPAeUNLFHF6NZAQ7Avnkzgi2OC505lK5avFag==",
+      "type": "package",
+      "path": "jquery-globalize/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/globalize.js",
+        "content/Scripts/globalize/currency.js",
+        "content/Scripts/globalize/date.js",
+        "content/Scripts/globalize/message.js",
+        "content/Scripts/globalize/number.js",
+        "content/Scripts/globalize/plural.js",
+        "content/Scripts/globalize/relative-time.js",
+        "content/Scripts/globalize/unit.js",
+        "jquery-globalize.1.1.1.nupkg.sha512",
+        "jquery-globalize.nuspec"
+      ]
+    },
+    "JSZip/3.1.2": {
+      "sha512": "yES0T93sQ4DXchqpKyWFIqSoo1HKQj7a6Gf8bEC3IzFvgNzEh2MP9gMcTYkWw2N7jhZvo7n6FukvmtkrH8i4Pw==",
+      "type": "package",
+      "path": "jszip/3.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/jszip.js",
+        "content/Scripts/jszip.min.js",
+        "jszip.3.1.2.nupkg.sha512",
+        "jszip.nuspec",
+        "nuget.exe"
       ]
     },
     "log4net/2.0.13": {
@@ -6992,14 +7341,15 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+    "Newtonsoft.Json/13.0.2": {
+      "sha512": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
       "type": "package",
-      "path": "newtonsoft.json/13.0.1",
+      "path": "newtonsoft.json/13.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "README.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -7008,13 +7358,15 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.13.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -11410,8 +11762,11 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AspNetCore.Unobtrusive.Ajax >= 2.0.0",
       "BundlerMinifier.TagHelpers >= 3.2.449",
       "Chart.js >= 3.7.1",
+      "DevExtreme.AspNet.Data >= 2.9.2",
+      "DevExtreme.Web >= 22.2.6",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.4",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.3",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.3",
@@ -11474,6 +11829,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "AspNetCore.Unobtrusive.Ajax": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "BundlerMinifier.TagHelpers": {
             "target": "Package",
             "version": "[3.2.449, )"
@@ -11481,6 +11840,14 @@
           "Chart.js": {
             "target": "Package",
             "version": "[3.7.1, )"
+          },
+          "DevExtreme.AspNet.Data": {
+            "target": "Package",
+            "version": "[2.9.2, )"
+          },
+          "DevExtreme.Web": {
+            "target": "Package",
+            "version": "[22.2.6, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

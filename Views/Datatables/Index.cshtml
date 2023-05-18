@@ -1,82 +1,30 @@
-﻿@{
+﻿@model IEnumerable<Portal.Models.Product>
+
+@{
+    ViewData["Title"] = "Datatables";
     Layout = "_CustomLayout";
 }
-<link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 <div class="box box-widget">
     <div class="box-header with-border text-center rowcolor">
         <h3>Datatables</h3>
     </div>
     <div class="box-body">
-        <div class="box-body">
-            <div class="row form-group">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <table id="myTable" class="table table-bordered"></table>
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="view-all">
+                    @await Html.PartialAsync("_ViewAll", Model)
                 </div>
+
             </div>
         </div>
-        <div class="box-footer text-center">
-        </div>
+    </div>
+    <div class="box-footer text-center">
     </div>
 </div>
 
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="CreateModal" aria-hidden="true" data-backdrop="static">
-    <div id="createContainer">
-    </div>
-</div>
-
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="EditModal" aria-hidden="true" data-backdrop="static">
-    <div id="editContainer">
-    </div>
-</div>
-
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModal" aria-hidden="true" data-backdrop="static">
-    <div id="deleteContainer">
-    </div>
-</div>
-<script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#myTable').DataTable(
-            {
-                ajax: {
-                    url: "/Datatables/LoadData",
-                    type: "POST",
-                },
-                processing: true,
-                serverSide: true,
-                filter: true,
-                columns: [
-                    //{ data: 'id', title: 'ID', name: 'id' },
-                    { render: function (data, type, full, meta) { return '<a class="btn btn-info" href="/Datatables/Edit/' + full.id + '">Edit</a>'; }},
-                    { data: 'name', title: 'Name', name: 'name', searchable: false },
-                    { data: 'category', title: 'Category', name: 'category', searchable: false },
-                    { data: 'price', title: 'Price', name: 'price', searchable: false },
-                    { render: function (data, type, full, meta) { return '<a class="btn btn-danger" href="/Datatables/Delete/' + full.id + '">Delete</a>'; }}  
-                ]
-            }
-        );
-    });
-
-    function DeleteData(CustomerID) {
-        if (confirm("Are you sure you want to delete ...?")) {
-            Delete(CustomerID);
-        } else {
-            return false;
-        }
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-
-
-    function Delete(CustomerID) {
-        var url = '@Url.Content("~/")' + "Datatables/Delete";
-
-        $.post(url, { ID: CustomerID }, function (data) {
-            if (data) {
-                oTable = $('#myTable').DataTable();
-                oTable.draw();
-            } else {
-                alert("Something Went Wrong!");
-            }
-        });
-    }
-</script>
+}

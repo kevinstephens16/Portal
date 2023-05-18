@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Portal.Models.Product>
+
+<table id="DataTable" class="table table-bordered stripe">
+    <thead class="thead-light">
+        <tr>
+            <th></th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-right">
+                <a onclick="showInPopup('@Url.Action("AddEdit","Datatables",null,Context.Request.Scheme)','New Product')"><i class="fas fa-plus"></i>New</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a onclick="showInPopup('@Url.Action("AddEdit","Datatables",new {id=item.Id},Context.Request.Scheme)','Update Product')"><i class="fas fa-pencil-alt"></i></a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td class="text-right">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td class="text-right">
+                    <a onclick="showInPopup('@Url.Action("Delete","Datatables",new {id=item.Id},Context.Request.Scheme)','Delete Product')"><i class="fas fa-trash-alt text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    table.dataTable thead tr {
+        background-color: Silver;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#DataTable').DataTable();
+    });
+
+</script>

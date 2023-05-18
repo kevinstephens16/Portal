@@ -1,0 +1,176 @@
+﻿@model IEnumerable<Portal.Models.Product>
+
+<body class="dx-viewport">
+    <div class="demo-container">
+        <div id="gridContainer"></div>
+
+        <div id="events">
+            <div>
+                <div class="caption"> Products </div>
+                <div id="clear"></div>
+            </div>
+            <ul></ul>
+        </div>
+    </div>
+</body>
+
+<script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+
+<link rel="stylesheet" href="~/css/dx.common.css">
+<link rel="stylesheet" href="~/css/dx.light.css">
+<script type="text/javascript" src="~/scripts/jquery-3.5.1.min.js"> </script>
+<script type="text/javascript" src="~/scripts/dx.all.js"> </script>
+@*<link rel="stylesheet" href="~/lib/devextreme/css/dx.light.css" />
+
+<script src="~/lib/jquery.js"></script>
+<script src="~/lib/devextreme/js/dx.all.debug.js"></script>
+
+<script src="~/lib/dx.aspnet.data.js"></script>*@
+<style>
+    #events {
+        background-color: rgba(191, 191, 191, 0.15);
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+        #events > div {
+            padding-bottom: 5px;
+        }
+
+            #events > div::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        #events #clear {
+            float: right;
+        }
+
+        #events .caption {
+            float: left;
+            font-weight: bold;
+            font-size: 115%;
+            line-height: 115%;
+            padding-top: 7px;
+        }
+
+        #events ul {
+            list-style: none;
+            max-height: 100px;
+            overflow: auto;
+            margin: 0;
+        }
+
+            #events ul li {
+                padding: 7px 0;
+                border-bottom: 1px solid #ddd;
+            }
+
+                #events ul li:last-child {
+                    border-bottom: none;
+                }
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(() => {
+             function logEvent(eventName) {
+                const logList = $('#events ul');
+                const newItem = $('<li>', { text: eventName });
+
+                logList.prepend(newItem);
+            }
+
+            //let serviceUrl = "https://url/to/my/service";
+
+            $('#gridContainer').dxDataGrid({
+                    //dataSource: employees,
+                    //dataSource: '/DevExtreme/GetProduct',
+                    dataSource:  data.createStore({
+                        key: "Id",
+                        loadUrl: "@Url.Action("Products", "DevExtreme")",
+                        //    //updateUrl: "@Url.Action("UpdateOrder", "Northwind")",
+                        //    //insertUrl: "@Url.Action("InsertOrder", "Northwind")",
+                        //    //deleteUrl: "@Url.Action("DeleteOrder", "Northwind")",
+                        onBeforeSend: function (operation, ajaxSettings) {
+                            //        // operation - any of "load", "update", "insert", "delete"
+                            //        // ajaxSettings - http://api.jquery.com/jquery.ajax/
+                        }
+                    }),
+                        //keyExpr: 'Id',
+                        showBorders: true,
+                            paging: {
+                        enabled: false,
+                    },
+                    editing: {
+                        mode: 'row',
+                            allowUpdating: true,
+                                allowDeleting: true,
+                                    allowAdding: true,
+                    },
+                    columns: [
+                        {
+                            dataField: 'Name',
+                            caption: 'Name',
+                        }, {
+                            dataField: 'Category',
+                            caption: 'Category',
+                        }, {
+                            dataField: 'Price',
+                            caption: 'Price',
+                            format: {
+                                type: 'currency',
+                                precision: 2
+                            }
+                            //dataType: 'date',
+                            ////width: 125,
+                        },
+                    ],
+                        onEditingStart() {
+                        logEvent('EditingStart');
+                    },
+                    onInitNewRow() {
+                        logEvent('InitNewRow');
+                    },
+                    onRowInserting() {
+                        logEvent('RowInserting');
+                    },
+                    onRowInserted() {
+                        logEvent('RowInserted');
+                    },
+                    onRowUpdating() {
+                        logEvent('RowUpdating');
+                    },
+                    onRowUpdated() {
+                        logEvent('RowUpdated');
+                    },
+                    onRowRemoving() {
+                        logEvent('RowRemoving');
+                    },
+                    onRowRemoved() {
+                        logEvent('RowRemoved');
+                    },
+                    onSaving() {
+                        logEvent('Saving');
+                    },
+                    onSaved() {
+                        logEvent('Saved');
+                    },
+                    onEditCanceling() {
+                        logEvent('EditCanceling');
+                    },
+                    onEditCanceled() {
+                        logEvent('EditCanceled');
+                    },
+                });
+            $('#clear').dxButton({
+                text: 'Clear',
+                onClick() {
+                    $('#events ul').empty();
+                },
+            });
+        });
+    });
+           
+</script>   

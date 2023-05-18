@@ -291,3 +291,5 @@ C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\log4net.config
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\log4net.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
 C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\Microsoft.AspNetCore.Owin.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\AspNetCore.Unobtrusive.Ajax.dll
+C:\Users\Steph\Source\Repos\Portal\bin\Debug\net7.0\DevExtreme.AspNet.Data.dll

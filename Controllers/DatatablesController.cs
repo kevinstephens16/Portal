@@ -11,9 +11,12 @@ using NuGet.ContentModel;
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Azure.Core;
+using static Helper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Portal.Controllers
 {
+    [Authorize]
     public class DatatablesController : Controller
     {
         private ProductDbContext _context;
@@ -23,231 +26,110 @@ namespace Portal.Controllers
             _context = context;
         }
 
-        //public DatatablesController(ProductDbContext ctx) => DbContext = ctx;
-
-        public IActionResult Index()
+        public async Task<IActionResult> AddEdit(int id = 0)
         {
-            return View();
-        }
-
-        [HttpPost]
-        public JsonResult LoadData()
-        {
-            int totalRecord = 0;
-            int filterRecord = 0;
-
-            var draw = Request.Form["draw"].FirstOrDefault();
-            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
-            var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
-            var searchValue = Request.Form["search[value]"].FirstOrDefault();
-            int pageSize = Convert.ToInt32(Request.Form["length"].FirstOrDefault() ?? "0");
-            int skip = Convert.ToInt32(Request.Form["start"].FirstOrDefault() ?? "0");
-
-            //var data = _context.Set<Product>().AsQueryable();
-
-            //get total count of data in table
-            //totalRecord = data.Count();
-
-            // search data when search value found
-            //if (!string.IsNullOrEmpty(searchValue))
-            //{
-            //    data = data.Where(x =>
-            //      x.FirstName.ToLower().Contains(searchValue.ToLower())
-            //      || x.LastName.ToLower().Contains(searchValue.ToLower())
-            //      || x.Designation.ToLower().Contains(searchValue.ToLower())
-            //      || x.Salary.ToString().ToLower().Contains(searchValue.ToLower())
-
-            //    );
-            //}
-            var customerData = (from tempcustomer in _context.Products
-                                select tempcustomer);
-            // get total count of records after search 
-            //filterRecord = data.Count();
-
-            //sort data
-            //if (!string.IsNullOrEmpty(sortColumn) && !string.IsNullOrEmpty(sortColumnDirection))
-            //    data = data.OrderBy(sortColumn + " " + sortColumnDirection);
-
-            totalRecord = customerData.Count();
-            filterRecord = customerData.Count();
-
-            //pagination
-            var data = customerData.Skip(skip).Take(pageSize).ToList();
-
-            var returnObj = new { draw = draw, data = data, recordsTotal = totalRecord, recordsFiltered = filterRecord };
-            return Json(returnObj);
-        }
-
-        [HttpGet]
-        public IActionResult Edit(string id)
-        {
-            try
+            if (id == 0)
+                return View(new Product());
+            else
             {
-                if (string.IsNullOrEmpty(id))
+                var item = await _context.Products.FindAsync(id);
+                if (item == null)
                 {
-                    return RedirectToAction("Index", "Datatables");
+                    return NotFound();
                 }
-
-                return View("Edit");
-            }
-            catch (Exception)
-            {
-                throw;
+                return View(item);
             }
         }
 
-        //[HttpPost]
-        //public IActionResult Delete(string id)
-        //{
-        //    try
-        //    {
-        //        if (string.IsNullOrEmpty(id))
-        //        {
-        //            return RedirectToAction("Index", "Datatables");
-        //        }
-
-        //        int result = 0;
-
-        //        if (result > 0)
-        //        {
-        //            return Json(data: true);
-        //        }
-        //        else
-        //        {
-        //            return Json(data: false);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
-
-        public ActionResult Create()
+        public async Task<IActionResult> Index()
         {
-            var model = new Product();
-            return View("_Create", model);
+            return View(await _context.Products.ToListAsync());
+        }
+
+        [NoDirectAccess]
+        public async Task<IActionResult> AddOrEdit(int id = 0)
+        {
+            if (id == 0)
+                return View(new Product());
+            else
+            {
+                var item = await _context.Products.FindAsync(id);
+                if (item == null)
+                {
+                    return NotFound();
+                }
+                return View(item);
+            }
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(Product productVM)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddEdit(int id, [Bind("Id, Name, Category, Price")] Product item)
         {
-
-            if (!ModelState.IsValid)
-                return View("_Create", productVM);
-
-            Product product = MapToViewModel(productVM);
-
-            _context.Products.Add(product);
-            var task = _context.SaveChangesAsync();
-            await task;
-
-            if (task.Exception != null)
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", "Unable to add the Product");
-                return View("_Create", productVM);
-            }
+                //Insert
+                if (id == 0)
+                {
+                    _context.Add(item);
+                    await _context.SaveChangesAsync();
 
-            return Content("success");
+                }
+                //Update
+                else
+                {
+                    try
+                    {
+                        _context.Update(item);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!ProductExists(item.Id))
+                        { return NotFound(); }
+                        else
+                        { throw; }
+                    }
+                }
+                return Json(new { isValid = true, html = Helper.RenderRazorViewToString(this, "_ViewAll", _context.Products.ToList()) });
+            }
+            return Json(new { isValid = false, html = Helper.RenderRazorViewToString(this, "AddEdit", item) });
         }
 
-        public ActionResult Edit(int id)
+        [NoDirectAccess]
+        public async Task<IActionResult> Delete(int id)
         {
-            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
-            var product = _context.Products.FirstOrDefault(x => x.Id == id);
-
-            Product productViewModel = MapToViewModel(product);
-
-            if (isAjax)
-                return PartialView("_Edit", productViewModel);
-            return View(productViewModel);
-        }
-
-        [HttpPost]
-        public async Task<ActionResult> Edit(Product productVM)
-        {
-            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
-            if (!ModelState.IsValid)
+            var item = await _context.Products.FindAsync(id);
+            if (item == null)
             {
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return View(isAjax ? "_Edit" : "Edit", productVM);
+                return NotFound();
             }
+            return View(item);
 
-            Product product = MapToViewModel(productVM);
-
-            _context.Products.Attach(product);
-            _context.Entry(product).State = EntityState.Modified;
-            var task = _context.SaveChangesAsync();
-            await task;
-
-            if (task.Exception != null)
-            {
-                ModelState.AddModelError("", "Unable to update the Product");
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return View(isAjax ? "_Edit" : "Edit", productVM);
-            }
-
-            if (isAjax)
-            {
-                return Content("success");
-            }
-
-            return RedirectToAction("Index");
-
-        }
-
-        public ActionResult Delete(int id)
-        {
-            var product = _context.Products.FirstOrDefault(x => x.Id == id);
-            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
-            Product productViewModel = MapToViewModel(product);
-
-            if (isAjax)
-                return PartialView("_Delete", product);
-            return View(productViewModel);
         }
 
         [HttpPost, ActionName("Delete")]
-        public async Task<ActionResult> DeleteProduct(int id)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id, [Bind("Id")] Product item)
         {
-            var isAjax = Request.Headers["X-Requested-With"] == "XMLHttpRequest";
-            var product = new Product { Id = id };
-            _context.Products.Attach(product);
-            _context.Products.Remove(product);
-
-            var task = _context.SaveChangesAsync();
-            await task;
-
-            if (task.Exception != null)
+            try
             {
-                ModelState.AddModelError("", "Unable to Delete the Product");
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                Product productVM = MapToViewModel(product);
-                return View(isAjax ? "_Delete" : "Delete", productVM);
+                _context.Products.Remove(item);
+                await _context.SaveChangesAsync();
             }
-
-            if (isAjax)
+            catch (DbUpdateConcurrencyException)
             {
-                return Content("success");
+                if (!ProductExists(item.Id))
+                { return NotFound(); }
+                else
+                { throw; }
             }
-
-            return RedirectToAction("Index");
-
+            return Json(new { isValid = true, html = Helper.RenderRazorViewToString(this, "_ViewAll", _context.Products.ToList()) });
         }
 
-        private Product MapToViewModel(Product product)
+        private bool ProductExists(int id)
         {
-
-            Product productViewModel = new Product()
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Category = product.Category,
-                Price = product.Price
-            };
-
-            return productViewModel;
+            return _context.Products.Any(e => e.Id == id);
         }
-
     }
 }

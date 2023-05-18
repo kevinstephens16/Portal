@@ -8,16 +8,12 @@
 }
 <aside class="main-sidebar">
     <section class="sidebar">
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#" class="text-white"><i class="fa fa-user text-white"></i> @User.Identity.Name</a>
-                </li>
-            </ul>
-        }
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li title="@User.Identity.Name"><a  href="#"><i class="fa fa-user"></i> <span>@User.Identity.Name</span></a></li>
+            }
             <li title="Main"><a href="~/Home/Index"><i class="fa fa-home"></i> <span>Main</span></a></li>
             <li title="Home"><a href="~/Store/Index"><i class="fa fa-home"></i> <span>Home</span></a></li>
             @if (User.IsInRole("Admin"))
@@ -51,6 +47,17 @@
                     <li title="Product"><a href="~/Store/Index"><i class="fa fa-file"></i> <span>Product</span></a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-folder"></i> <span>Examples</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li title="DataTables"><a href="~/Datatables/index"><i class="fa fa-pencil"></i> <span>DataTables</span></a></li>
+                </ul>
+            </li>
             @if (SignInManager.IsSignedIn(User))
             {
                 <li class="nav-item">
@@ -58,7 +65,7 @@
                       asp-route-returnUrl="@Url.Page("/", new { area = "" })"
                           method="post">
                         <button type="submit" class="btn btn-link text-white">
-                            <i class="fa fa-lock"></i><span> Logout</span>
+                            <i class="fa fa-lock text-white"></i><span> Logout</span>
                         </button>
                     </form>
                 </li>

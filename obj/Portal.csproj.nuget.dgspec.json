@@ -47,6 +47,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AspNetCore.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "BundlerMinifier.TagHelpers": {
               "target": "Package",
               "version": "[3.2.449, )"
@@ -54,6 +58,14 @@
             "Chart.js": {
               "target": "Package",
               "version": "[3.7.1, )"
+            },
+            "DevExtreme.AspNet.Data": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            },
+            "DevExtreme.Web": {
+              "target": "Package",
+              "version": "[22.2.6, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

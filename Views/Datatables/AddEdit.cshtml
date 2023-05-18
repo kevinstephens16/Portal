@@ -1,0 +1,48 @@
+﻿@model Portal.Models.Product
+
+@{
+    Layout = null;
+}
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddEdit" asp-route-id="@Model.Id" onsubmit="return jQueryAjaxPost(this);">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="row form-group">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label asp-for="Name" class="control-label"></label>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <input class="form-control" asp-for="Name" title="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label asp-for="Category" class="control-label"></label>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <input class="form-control" asp-for="Category" title="Category" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label asp-for="Price" class="control-label"></label>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <input class="form-control" asp-for="Price" title="Price" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Save" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

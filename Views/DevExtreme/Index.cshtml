@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<Portal.Models.Product>
+
 @{
+    ViewData["Title"] = "Dev Extreme Table";
+    Layout = "_CustomLayout";
+}
+
+<div class="box box-widget">
+    <div class="box-header with-border text-center rowcolor">
+        <h3>Dev Extreme Table</h3>
+    </div>
+    <div class="box-body">
+        <div class="row form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="view-all">
+                    @await Html.PartialAsync("_ViewAll", Model)
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

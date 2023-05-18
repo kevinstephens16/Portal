@@ -15,6 +15,7 @@
     <title>@ViewData["Title"] - Portal</title>
     <bundle name="wwwroot/bundles/site.min.css" />
     <bundle name="wwwroot/bundles/site.min.js" />
+    <script src="~/scripts/bootstrap-3.4.1.min.js"></script>
 
 </head>
 <body id="s-@(ViewData["PageId"])Page" class="@(ViewData["BodyClass"]) fixed sidebar-mini hold-transition skin-@theme@(hideNav ? " no-navigation" : " has-layout-event")@(rtl ? " rtl" : "")">
@@ -40,6 +41,21 @@
             <section class="content">
                 @RenderBody()
             </section>
+            <div class="modal" tabindex="-1" role="dialog" id="form-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center rowcolor">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="Close">&times;</button>
+                            <h5 class="modal-title"></h5>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="loaderbody" id="loaderbody">
+                <div class="loader"></div>
+            </div>
             <footer style="text-align: center;" class="footer">
                 <p> &copy; @DateTime.Now.Year Company, Inc. All rights reserved.</p>
             </footer>
@@ -72,7 +88,23 @@
     </div>
     @RenderSection("Scripts", false)
 
+@*    <script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <script src="~/scripts/site.js" asp-append-version="true"></script>
+
     <script type="text/javascript">
+        $(function () {
+            $("#loaderbody").addClass('hide');
+
+            $(document).bind('ajaxStart', function () {
+                $("#loaderbody").removeClass('hide');
+            }).bind('ajaxStop', function () {
+                $("#loaderbody").addClass('hide');
+            });
+        });
+
         $('#ThemeSelect').on('change', function () {
             $.cookie('ThemePreference', $("#ThemeSelect :selected").attr('value'), {
                 path: "/",
